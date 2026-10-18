@@ -1,0 +1,10 @@
+# google-services.json in showcase/ (or repository root) supplies the public Firebase client values automatically.
+# Copy to stream.properties. Set these two URLs; Firebase files often omit the database URL.
+DATABASE_URL=
+WORKER_URL=
+FORCE_RELAY=false
+# Optional overrides if not using google-services.json (never put backend secrets here):
+PROJECT_ID=
+APPLICATION_ID=
+API_KEY=
+SENDER_ID=

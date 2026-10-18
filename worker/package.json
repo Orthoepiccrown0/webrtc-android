@@ -1,0 +1,25 @@
+{
+  "name": "directstream-sdk-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "check": "tsc --noEmit",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "format": "prettier --config .prettierrc.json --write \"src/**/*.ts\" \"test/**/*.ts\" package.json package-lock.json tsconfig.json .prettierrc.json \"../firebase/*.mjs\" \"../firebase/*.json\" \"../showcase/src/**/*.xml\" \"../sdk*/src/**/*.xml\" \"../integration-consumer/src/**/*.xml\"",
+    "format:check": "prettier --config .prettierrc.json --check \"src/**/*.ts\" \"test/**/*.ts\" package.json package-lock.json tsconfig.json .prettierrc.json \"../firebase/*.mjs\" \"../firebase/*.json\" \"../showcase/src/**/*.xml\" \"../sdk*/src/**/*.xml\" \"../integration-consumer/src/**/*.xml\"",
+    "db:migrate:local": "wrangler d1 migrations apply directstream-coordination --local",
+    "test:runtime": "node --experimental-strip-types test/d1-runtime.ts"
+  },
+  "dependencies": {
+    "jose": "6.1.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261014.1",
+    "@prettier/plugin-xml": "3.4.2",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3",
+    "wrangler": "4.151.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "printWidth": 100,
+  "tabWidth": 2,
+  "singleQuote": false,
+  "trailingComma": "all",
+  "plugins": ["@prettier/plugin-xml"],
+  "overrides": [
+    {
+      "files": "*.xml",
+      "options": {
+        "tabWidth": 4,
+        "xmlWhitespaceSensitivity": "preserve"
+      }
+    }
+  ]
+}

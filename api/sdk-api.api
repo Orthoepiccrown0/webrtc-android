@@ -1,0 +1,1132 @@
+public final class com.epiccrown.directstream.api.AdmissionProvider$DefaultImpls {
+  public static java.lang.Object register(com.epiccrown.directstream.api.AdmissionProvider, java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.Device>);
+  public static java.lang.Object revoke(com.epiccrown.directstream.api.AdmissionProvider, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public static java.lang.Object create(com.epiccrown.directstream.api.AdmissionProvider, java.lang.String, java.lang.String, com.epiccrown.directstream.api.CallMode, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.PairingRequest>);
+  public static java.lang.Object status$default(com.epiccrown.directstream.api.AdmissionProvider, java.lang.String, long, kotlin.coroutines.Continuation, int, java.lang.Object);
+}
+public interface com.epiccrown.directstream.api.AdmissionProvider {
+  public abstract kotlinx.coroutines.flow.Flow<com.epiccrown.directstream.api.PairingRequest> incomingEvents();
+  public abstract kotlinx.coroutines.flow.Flow<com.epiccrown.directstream.api.PairingRequest> requestEvents(java.lang.String);
+  public abstract kotlinx.coroutines.flow.Flow<com.epiccrown.directstream.api.SessionStatus> sessionEvents(java.lang.String);
+  public abstract java.lang.Object register(kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.Device>);
+  public default java.lang.Object register(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.Device>);
+  public static java.lang.Object register$suspendImpl(com.epiccrown.directstream.api.AdmissionProvider, java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.Device>);
+  public abstract java.lang.Object reset(kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.Device>);
+  public default java.lang.Object revoke(kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public static java.lang.Object revoke$suspendImpl(com.epiccrown.directstream.api.AdmissionProvider, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public default java.lang.Object create(java.lang.String, java.lang.String, com.epiccrown.directstream.api.CallMode, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.PairingRequest>);
+  public static java.lang.Object create$suspendImpl(com.epiccrown.directstream.api.AdmissionProvider, java.lang.String, java.lang.String, com.epiccrown.directstream.api.CallMode, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.PairingRequest>);
+  public abstract java.lang.Object create(java.lang.String, java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.PairingRequest>);
+  public abstract java.lang.Object incoming(kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.PairingRequest>);
+  public abstract java.lang.Object status(java.lang.String, long, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.PairingRequest>);
+  public static java.lang.Object status$default(com.epiccrown.directstream.api.AdmissionProvider, java.lang.String, long, kotlin.coroutines.Continuation, int, java.lang.Object);
+  public abstract java.lang.Object approve(java.lang.String, kotlin.coroutines.Continuation<? super java.lang.String>);
+  public abstract java.lang.Object reject(java.lang.String, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public abstract java.lang.Object cancel(java.lang.String, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public abstract java.lang.Object end(java.lang.String, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public abstract java.lang.Object sessionActive(java.lang.String, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+}
+public final class com.epiccrown.directstream.api.AudioOutput {
+  public com.epiccrown.directstream.api.AudioOutput(int, java.lang.String, boolean);
+  public com.epiccrown.directstream.api.AudioOutput(int, java.lang.String, boolean, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final int getId();
+  public final java.lang.String getLabel();
+  public final boolean getBluetooth();
+  public final int component1();
+  public final java.lang.String component2();
+  public final boolean component3();
+  public final com.epiccrown.directstream.api.AudioOutput copy(int, java.lang.String, boolean);
+  public static com.epiccrown.directstream.api.AudioOutput copy$default(com.epiccrown.directstream.api.AudioOutput, int, java.lang.String, boolean, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.BackendException extends java.lang.Exception {
+  public com.epiccrown.directstream.api.BackendException(int, java.lang.String);
+  public final int getStatus();
+}
+public final class com.epiccrown.directstream.api.CallAttempt {
+  public com.epiccrown.directstream.api.CallAttempt(java.lang.String, java.lang.String, long, com.epiccrown.directstream.api.CallDirection, com.epiccrown.directstream.api.CallOutcome, java.lang.String, java.lang.String);
+  public com.epiccrown.directstream.api.CallAttempt(java.lang.String, java.lang.String, long, com.epiccrown.directstream.api.CallDirection, com.epiccrown.directstream.api.CallOutcome, java.lang.String, java.lang.String, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.lang.String getCode();
+  public final java.lang.String getRequestId();
+  public final long getAt();
+  public final com.epiccrown.directstream.api.CallDirection getDirection();
+  public final com.epiccrown.directstream.api.CallOutcome getOutcome();
+  public final java.lang.String getPeerUid();
+  public final java.lang.String getPeerName();
+  public final java.lang.String component1();
+  public final java.lang.String component2();
+  public final long component3();
+  public final com.epiccrown.directstream.api.CallDirection component4();
+  public final com.epiccrown.directstream.api.CallOutcome component5();
+  public final java.lang.String component6();
+  public final java.lang.String component7();
+  public final com.epiccrown.directstream.api.CallAttempt copy(java.lang.String, java.lang.String, long, com.epiccrown.directstream.api.CallDirection, com.epiccrown.directstream.api.CallOutcome, java.lang.String, java.lang.String);
+  public static com.epiccrown.directstream.api.CallAttempt copy$default(com.epiccrown.directstream.api.CallAttempt, java.lang.String, java.lang.String, long, com.epiccrown.directstream.api.CallDirection, com.epiccrown.directstream.api.CallOutcome, java.lang.String, java.lang.String, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.CallCodecPreferences$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CallCodecPreferences> serializer();
+  public com.epiccrown.directstream.api.CallCodecPreferences$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CallCodecPreferences {
+  public static final com.epiccrown.directstream.api.CallCodecPreferences$Companion Companion;
+  public com.epiccrown.directstream.api.CallCodecPreferences(com.epiccrown.directstream.api.CodecPolicy, com.epiccrown.directstream.api.CodecPolicy);
+  public com.epiccrown.directstream.api.CallCodecPreferences(com.epiccrown.directstream.api.CodecPolicy, com.epiccrown.directstream.api.CodecPolicy, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.CodecPolicy getVideo();
+  public final com.epiccrown.directstream.api.CodecPolicy getAudio();
+  public final com.epiccrown.directstream.api.CodecPolicy component1();
+  public final com.epiccrown.directstream.api.CodecPolicy component2();
+  public final com.epiccrown.directstream.api.CallCodecPreferences copy(com.epiccrown.directstream.api.CodecPolicy, com.epiccrown.directstream.api.CodecPolicy);
+  public static com.epiccrown.directstream.api.CallCodecPreferences copy$default(com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecPolicy, com.epiccrown.directstream.api.CodecPolicy, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CallCodecPreferences, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CallCodecPreferences(int, com.epiccrown.directstream.api.CodecPolicy, com.epiccrown.directstream.api.CodecPolicy, kotlinx.serialization.internal.SerializationConstructorMarker);
+  public com.epiccrown.directstream.api.CallCodecPreferences();
+}
+public final class com.epiccrown.directstream.api.CallCodecState {
+  public com.epiccrown.directstream.api.CallCodecState(com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CodecFailureReason, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CodecSelection, java.lang.String, com.epiccrown.directstream.api.CodecPhase, com.epiccrown.directstream.api.CodecFailureReason);
+  public com.epiccrown.directstream.api.CallCodecState(com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CodecFailureReason, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CodecSelection, java.lang.String, com.epiccrown.directstream.api.CodecPhase, com.epiccrown.directstream.api.CodecFailureReason, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.CodecCapabilities getCapabilities();
+  public final com.epiccrown.directstream.api.CodecFailureReason getCapabilitiesFailure();
+  public final com.epiccrown.directstream.api.CallCodecPreferences getNextCall();
+  public final com.epiccrown.directstream.api.CallCodecPreferences getActive();
+  public final com.epiccrown.directstream.api.CallCodecPreferences getRequested();
+  public final com.epiccrown.directstream.api.CodecEndpoint getPeer();
+  public final com.epiccrown.directstream.api.CodecSelection getSelection();
+  public final java.lang.String getTransactionId();
+  public final com.epiccrown.directstream.api.CodecPhase getPhase();
+  public final com.epiccrown.directstream.api.CodecFailureReason getFailure();
+  public final com.epiccrown.directstream.api.CodecCapabilities component1();
+  public final com.epiccrown.directstream.api.CodecFailureReason component2();
+  public final com.epiccrown.directstream.api.CallCodecPreferences component3();
+  public final com.epiccrown.directstream.api.CallCodecPreferences component4();
+  public final com.epiccrown.directstream.api.CallCodecPreferences component5();
+  public final com.epiccrown.directstream.api.CodecEndpoint component6();
+  public final com.epiccrown.directstream.api.CodecSelection component7();
+  public final java.lang.String component8();
+  public final com.epiccrown.directstream.api.CodecPhase component9();
+  public final com.epiccrown.directstream.api.CodecFailureReason component10();
+  public final com.epiccrown.directstream.api.CallCodecState copy(com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CodecFailureReason, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CodecSelection, java.lang.String, com.epiccrown.directstream.api.CodecPhase, com.epiccrown.directstream.api.CodecFailureReason);
+  public static com.epiccrown.directstream.api.CallCodecState copy$default(com.epiccrown.directstream.api.CallCodecState, com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CodecFailureReason, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CodecSelection, java.lang.String, com.epiccrown.directstream.api.CodecPhase, com.epiccrown.directstream.api.CodecFailureReason, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public com.epiccrown.directstream.api.CallCodecState();
+}
+public final class com.epiccrown.directstream.api.CallDirection extends java.lang.Enum<com.epiccrown.directstream.api.CallDirection> {
+  public static final com.epiccrown.directstream.api.CallDirection INCOMING;
+  public static final com.epiccrown.directstream.api.CallDirection OUTGOING;
+  public static com.epiccrown.directstream.api.CallDirection[] values();
+  public static com.epiccrown.directstream.api.CallDirection valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.CallDirection> getEntries();
+}
+public final class com.epiccrown.directstream.api.CallFailure {
+  public com.epiccrown.directstream.api.CallFailure(com.epiccrown.directstream.api.FailureKind, java.lang.String, com.epiccrown.directstream.api.CodecFailureReason, java.util.List<java.lang.String>, boolean);
+  public com.epiccrown.directstream.api.CallFailure(com.epiccrown.directstream.api.FailureKind, java.lang.String, com.epiccrown.directstream.api.CodecFailureReason, java.util.List, boolean, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.FailureKind getKind();
+  public final java.lang.String getMessage();
+  public final com.epiccrown.directstream.api.CodecFailureReason getCodecReason();
+  public final java.util.List<java.lang.String> getRequiredPermissions();
+  public final boolean getRequiresVisibleUnlockedUi();
+  public final com.epiccrown.directstream.api.FailureKind component1();
+  public final java.lang.String component2();
+  public final com.epiccrown.directstream.api.CodecFailureReason component3();
+  public final java.util.List<java.lang.String> component4();
+  public final boolean component5();
+  public final com.epiccrown.directstream.api.CallFailure copy(com.epiccrown.directstream.api.FailureKind, java.lang.String, com.epiccrown.directstream.api.CodecFailureReason, java.util.List<java.lang.String>, boolean);
+  public static com.epiccrown.directstream.api.CallFailure copy$default(com.epiccrown.directstream.api.CallFailure, com.epiccrown.directstream.api.FailureKind, java.lang.String, com.epiccrown.directstream.api.CodecFailureReason, java.util.List, boolean, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.CallMediaState {
+  public com.epiccrown.directstream.api.CallMediaState(boolean, boolean, boolean, boolean, boolean, boolean, java.lang.Boolean, com.epiccrown.directstream.api.AudioOutput, java.util.List<com.epiccrown.directstream.api.AudioOutput>);
+  public com.epiccrown.directstream.api.CallMediaState(boolean, boolean, boolean, boolean, boolean, boolean, java.lang.Boolean, com.epiccrown.directstream.api.AudioOutput, java.util.List, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final boolean getMicrophoneAvailable();
+  public final boolean getMuted();
+  public final boolean getInterrupted();
+  public final boolean getSystemMuted();
+  public final boolean getLocalVideoPaused();
+  public final boolean getRemoteVideoPaused();
+  public final java.lang.Boolean getRemoteMuted();
+  public final com.epiccrown.directstream.api.AudioOutput getOutput();
+  public final java.util.List<com.epiccrown.directstream.api.AudioOutput> getOutputs();
+  public final boolean component1();
+  public final boolean component2();
+  public final boolean component3();
+  public final boolean component4();
+  public final boolean component5();
+  public final boolean component6();
+  public final java.lang.Boolean component7();
+  public final com.epiccrown.directstream.api.AudioOutput component8();
+  public final java.util.List<com.epiccrown.directstream.api.AudioOutput> component9();
+  public final com.epiccrown.directstream.api.CallMediaState copy(boolean, boolean, boolean, boolean, boolean, boolean, java.lang.Boolean, com.epiccrown.directstream.api.AudioOutput, java.util.List<com.epiccrown.directstream.api.AudioOutput>);
+  public static com.epiccrown.directstream.api.CallMediaState copy$default(com.epiccrown.directstream.api.CallMediaState, boolean, boolean, boolean, boolean, boolean, boolean, java.lang.Boolean, com.epiccrown.directstream.api.AudioOutput, java.util.List, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public com.epiccrown.directstream.api.CallMediaState();
+}
+public final class com.epiccrown.directstream.api.CallMode$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CallMode> serializer();
+  public com.epiccrown.directstream.api.CallMode$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CallMode extends java.lang.Enum<com.epiccrown.directstream.api.CallMode> {
+  public static final com.epiccrown.directstream.api.CallMode$Companion Companion;
+  public static final com.epiccrown.directstream.api.CallMode Audio;
+  public static final com.epiccrown.directstream.api.CallMode Video;
+  public static com.epiccrown.directstream.api.CallMode[] values();
+  public static com.epiccrown.directstream.api.CallMode valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.CallMode> getEntries();
+}
+public final class com.epiccrown.directstream.api.CallOutcome extends java.lang.Enum<com.epiccrown.directstream.api.CallOutcome> {
+  public static final com.epiccrown.directstream.api.CallOutcome CALLING;
+  public static final com.epiccrown.directstream.api.CallOutcome INCOMING;
+  public static final com.epiccrown.directstream.api.CallOutcome ACCEPTED;
+  public static final com.epiccrown.directstream.api.CallOutcome CONNECTED;
+  public static final com.epiccrown.directstream.api.CallOutcome COMPLETED;
+  public static final com.epiccrown.directstream.api.CallOutcome MISSED;
+  public static final com.epiccrown.directstream.api.CallOutcome DECLINED;
+  public static final com.epiccrown.directstream.api.CallOutcome CANCELLED;
+  public static final com.epiccrown.directstream.api.CallOutcome FAILED;
+  public static com.epiccrown.directstream.api.CallOutcome[] values();
+  public static com.epiccrown.directstream.api.CallOutcome valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.CallOutcome> getEntries();
+}
+public final class com.epiccrown.directstream.api.CallProvider$DefaultImpls {
+  public static com.epiccrown.directstream.api.PushProvider getPush(com.epiccrown.directstream.api.CallProvider);
+  public static com.epiccrown.directstream.api.RelayProvider getRelay(com.epiccrown.directstream.api.CallProvider);
+  public static java.lang.Object dispose(com.epiccrown.directstream.api.CallProvider, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+}
+public interface com.epiccrown.directstream.api.CallProvider {
+  public abstract java.lang.String getName();
+  public abstract java.lang.Object getConfigurationKey();
+  public abstract com.epiccrown.directstream.api.ConfigurationCheck validate();
+  public abstract com.epiccrown.directstream.api.IdentityProvider getIdentity();
+  public abstract com.epiccrown.directstream.api.AdmissionProvider getAdmission();
+  public abstract com.epiccrown.directstream.api.SignalingProvider getSignaling();
+  public default com.epiccrown.directstream.api.PushProvider getPush();
+  public default com.epiccrown.directstream.api.RelayProvider getRelay();
+  public default java.lang.Object dispose(kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public static java.lang.Object dispose$suspendImpl(com.epiccrown.directstream.api.CallProvider, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+}
+public interface com.epiccrown.directstream.api.CallServiceBridge {
+  public abstract java.lang.Object start(boolean, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public abstract void stop();
+}
+public final class com.epiccrown.directstream.api.CallSnapshot {
+  public com.epiccrown.directstream.api.CallSnapshot(com.epiccrown.directstream.api.CallCodecState, boolean, com.epiccrown.directstream.api.CallMode, com.epiccrown.directstream.api.CallAttempt, com.epiccrown.directstream.api.Device, com.epiccrown.directstream.api.StreamSessionState, com.epiccrown.directstream.api.StreamStats, boolean, com.epiccrown.directstream.api.CallFailure, java.lang.String, java.lang.String, com.epiccrown.directstream.api.CallMediaState, boolean, java.lang.String, java.lang.String, boolean);
+  public com.epiccrown.directstream.api.CallSnapshot(com.epiccrown.directstream.api.CallCodecState, boolean, com.epiccrown.directstream.api.CallMode, com.epiccrown.directstream.api.CallAttempt, com.epiccrown.directstream.api.Device, com.epiccrown.directstream.api.StreamSessionState, com.epiccrown.directstream.api.StreamStats, boolean, com.epiccrown.directstream.api.CallFailure, java.lang.String, java.lang.String, com.epiccrown.directstream.api.CallMediaState, boolean, java.lang.String, java.lang.String, boolean, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.CallCodecState getCodecs();
+  public final boolean getReady();
+  public final com.epiccrown.directstream.api.CallMode getMode();
+  public final com.epiccrown.directstream.api.CallAttempt getLatestAttempt();
+  public final com.epiccrown.directstream.api.Device getDevice();
+  public final com.epiccrown.directstream.api.StreamSessionState getSession();
+  public final com.epiccrown.directstream.api.StreamStats getStats();
+  public final boolean getBusy();
+  public final com.epiccrown.directstream.api.CallFailure getFailure();
+  public final java.lang.String getError();
+  public final java.lang.String getOutcome();
+  public final com.epiccrown.directstream.api.CallMediaState getMedia();
+  public final boolean getOnline();
+  public final java.lang.String getPeerDisplayName();
+  public final java.lang.String getPeerCode();
+  public final boolean getShowDebugIdentifiers();
+  public final com.epiccrown.directstream.api.CallCodecState component1();
+  public final boolean component2();
+  public final com.epiccrown.directstream.api.CallMode component3();
+  public final com.epiccrown.directstream.api.CallAttempt component4();
+  public final com.epiccrown.directstream.api.Device component5();
+  public final com.epiccrown.directstream.api.StreamSessionState component6();
+  public final com.epiccrown.directstream.api.StreamStats component7();
+  public final boolean component8();
+  public final com.epiccrown.directstream.api.CallFailure component9();
+  public final java.lang.String component10();
+  public final java.lang.String component11();
+  public final com.epiccrown.directstream.api.CallMediaState component12();
+  public final boolean component13();
+  public final java.lang.String component14();
+  public final java.lang.String component15();
+  public final boolean component16();
+  public final com.epiccrown.directstream.api.CallSnapshot copy(com.epiccrown.directstream.api.CallCodecState, boolean, com.epiccrown.directstream.api.CallMode, com.epiccrown.directstream.api.CallAttempt, com.epiccrown.directstream.api.Device, com.epiccrown.directstream.api.StreamSessionState, com.epiccrown.directstream.api.StreamStats, boolean, com.epiccrown.directstream.api.CallFailure, java.lang.String, java.lang.String, com.epiccrown.directstream.api.CallMediaState, boolean, java.lang.String, java.lang.String, boolean);
+  public static com.epiccrown.directstream.api.CallSnapshot copy$default(com.epiccrown.directstream.api.CallSnapshot, com.epiccrown.directstream.api.CallCodecState, boolean, com.epiccrown.directstream.api.CallMode, com.epiccrown.directstream.api.CallAttempt, com.epiccrown.directstream.api.Device, com.epiccrown.directstream.api.StreamSessionState, com.epiccrown.directstream.api.StreamStats, boolean, com.epiccrown.directstream.api.CallFailure, java.lang.String, java.lang.String, com.epiccrown.directstream.api.CallMediaState, boolean, java.lang.String, java.lang.String, boolean, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public com.epiccrown.directstream.api.CallSnapshot();
+}
+public final class com.epiccrown.directstream.api.CallState {
+  public com.epiccrown.directstream.api.CallState(com.epiccrown.directstream.api.StreamSessionState, com.epiccrown.directstream.api.CallMode, java.lang.String, com.epiccrown.directstream.api.CallAttempt, com.epiccrown.directstream.api.CallFailure, java.lang.String, java.lang.String);
+  public com.epiccrown.directstream.api.CallState(com.epiccrown.directstream.api.StreamSessionState, com.epiccrown.directstream.api.CallMode, java.lang.String, com.epiccrown.directstream.api.CallAttempt, com.epiccrown.directstream.api.CallFailure, java.lang.String, java.lang.String, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.StreamSessionState getSession();
+  public final com.epiccrown.directstream.api.CallMode getMode();
+  public final java.lang.String getCallId();
+  public final com.epiccrown.directstream.api.CallAttempt getLatestAttempt();
+  public final com.epiccrown.directstream.api.CallFailure getFailure();
+  public final java.lang.String getPeerName();
+  public final java.lang.String getPeerCode();
+  public final com.epiccrown.directstream.api.StreamSessionState component1();
+  public final com.epiccrown.directstream.api.CallMode component2();
+  public final java.lang.String component3();
+  public final com.epiccrown.directstream.api.CallAttempt component4();
+  public final com.epiccrown.directstream.api.CallFailure component5();
+  public final java.lang.String component6();
+  public final java.lang.String component7();
+  public final com.epiccrown.directstream.api.CallState copy(com.epiccrown.directstream.api.StreamSessionState, com.epiccrown.directstream.api.CallMode, java.lang.String, com.epiccrown.directstream.api.CallAttempt, com.epiccrown.directstream.api.CallFailure, java.lang.String, java.lang.String);
+  public static com.epiccrown.directstream.api.CallState copy$default(com.epiccrown.directstream.api.CallState, com.epiccrown.directstream.api.StreamSessionState, com.epiccrown.directstream.api.CallMode, java.lang.String, com.epiccrown.directstream.api.CallAttempt, com.epiccrown.directstream.api.CallFailure, java.lang.String, java.lang.String, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public com.epiccrown.directstream.api.CallState();
+}
+public interface com.epiccrown.directstream.api.CallVideoRenderer {
+  public abstract kotlinx.coroutines.flow.StateFlow<java.lang.Boolean> getLocalAvailable();
+  public abstract kotlinx.coroutines.flow.StateFlow<java.lang.Boolean> getRemoteAvailable();
+  public abstract kotlinx.coroutines.flow.StateFlow<java.lang.Boolean> getFrontCamera();
+  public abstract android.view.View createView(android.content.Context, com.epiccrown.directstream.api.VideoStream, boolean);
+  public abstract void updateView(android.view.View, boolean);
+  public abstract void releaseView(android.view.View);
+}
+public final class com.epiccrown.directstream.api.CodecCapabilities$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecCapabilities> serializer();
+  public com.epiccrown.directstream.api.CodecCapabilities$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecCapabilities {
+  public static final com.epiccrown.directstream.api.CodecCapabilities$Companion Companion;
+  public com.epiccrown.directstream.api.CodecCapabilities(java.util.List<com.epiccrown.directstream.api.CodecCapability>);
+  public com.epiccrown.directstream.api.CodecCapabilities(java.util.List, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.util.List<com.epiccrown.directstream.api.CodecCapability> getCodecs();
+  public final com.epiccrown.directstream.api.CodecCapability find(com.epiccrown.directstream.api.CodecId);
+  public final java.util.List<com.epiccrown.directstream.api.CodecCapability> component1();
+  public final com.epiccrown.directstream.api.CodecCapabilities copy(java.util.List<com.epiccrown.directstream.api.CodecCapability>);
+  public static com.epiccrown.directstream.api.CodecCapabilities copy$default(com.epiccrown.directstream.api.CodecCapabilities, java.util.List, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CodecCapabilities, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CodecCapabilities(int, java.util.List, kotlinx.serialization.internal.SerializationConstructorMarker);
+  public com.epiccrown.directstream.api.CodecCapabilities();
+}
+public final class com.epiccrown.directstream.api.CodecCapability$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecCapability> serializer();
+  public com.epiccrown.directstream.api.CodecCapability$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecCapability {
+  public static final com.epiccrown.directstream.api.CodecCapability$Companion Companion;
+  public com.epiccrown.directstream.api.CodecCapability(com.epiccrown.directstream.api.CodecId, java.util.List<com.epiccrown.directstream.api.CodecFormat>, java.util.List<com.epiccrown.directstream.api.CodecFormat>, com.epiccrown.directstream.api.CodecImplementation, com.epiccrown.directstream.api.CodecImplementation);
+  public com.epiccrown.directstream.api.CodecCapability(com.epiccrown.directstream.api.CodecId, java.util.List, java.util.List, com.epiccrown.directstream.api.CodecImplementation, com.epiccrown.directstream.api.CodecImplementation, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.CodecId getCodec();
+  public final java.util.List<com.epiccrown.directstream.api.CodecFormat> getEncoding();
+  public final java.util.List<com.epiccrown.directstream.api.CodecFormat> getDecoding();
+  public final com.epiccrown.directstream.api.CodecImplementation getEncoderImplementation();
+  public final com.epiccrown.directstream.api.CodecImplementation getDecoderImplementation();
+  public final boolean getCanEncode();
+  public final boolean getCanDecode();
+  public final boolean getBidirectional();
+  public final com.epiccrown.directstream.api.CodecId component1();
+  public final java.util.List<com.epiccrown.directstream.api.CodecFormat> component2();
+  public final java.util.List<com.epiccrown.directstream.api.CodecFormat> component3();
+  public final com.epiccrown.directstream.api.CodecImplementation component4();
+  public final com.epiccrown.directstream.api.CodecImplementation component5();
+  public final com.epiccrown.directstream.api.CodecCapability copy(com.epiccrown.directstream.api.CodecId, java.util.List<com.epiccrown.directstream.api.CodecFormat>, java.util.List<com.epiccrown.directstream.api.CodecFormat>, com.epiccrown.directstream.api.CodecImplementation, com.epiccrown.directstream.api.CodecImplementation);
+  public static com.epiccrown.directstream.api.CodecCapability copy$default(com.epiccrown.directstream.api.CodecCapability, com.epiccrown.directstream.api.CodecId, java.util.List, java.util.List, com.epiccrown.directstream.api.CodecImplementation, com.epiccrown.directstream.api.CodecImplementation, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CodecCapability, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CodecCapability(int, com.epiccrown.directstream.api.CodecId, java.util.List, java.util.List, com.epiccrown.directstream.api.CodecImplementation, com.epiccrown.directstream.api.CodecImplementation, kotlinx.serialization.internal.SerializationConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecEndpoint$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecEndpoint> serializer();
+  public com.epiccrown.directstream.api.CodecEndpoint$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecEndpoint {
+  public static final com.epiccrown.directstream.api.CodecEndpoint$Companion Companion;
+  public com.epiccrown.directstream.api.CodecEndpoint(com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallMode);
+  public com.epiccrown.directstream.api.CodecEndpoint(com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallMode, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.CodecCapabilities getCapabilities();
+  public final com.epiccrown.directstream.api.CallCodecPreferences getPreferences();
+  public final com.epiccrown.directstream.api.CallMode getMode();
+  public final com.epiccrown.directstream.api.CodecCapabilities component1();
+  public final com.epiccrown.directstream.api.CallCodecPreferences component2();
+  public final com.epiccrown.directstream.api.CallMode component3();
+  public final com.epiccrown.directstream.api.CodecEndpoint copy(com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallMode);
+  public static com.epiccrown.directstream.api.CodecEndpoint copy$default(com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallMode, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CodecEndpoint, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CodecEndpoint(int, com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallMode, kotlinx.serialization.internal.SerializationConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecException extends java.lang.Exception {
+  public com.epiccrown.directstream.api.CodecException(com.epiccrown.directstream.api.CodecFailureReason);
+  public final com.epiccrown.directstream.api.CodecFailureReason getReason();
+}
+public final class com.epiccrown.directstream.api.CodecFailureReason$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecFailureReason> serializer();
+  public com.epiccrown.directstream.api.CodecFailureReason$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecFailureReason extends java.lang.Enum<com.epiccrown.directstream.api.CodecFailureReason> {
+  public static final com.epiccrown.directstream.api.CodecFailureReason$Companion Companion;
+  public static final com.epiccrown.directstream.api.CodecFailureReason UNSUPPORTED_LOCAL;
+  public static final com.epiccrown.directstream.api.CodecFailureReason INCOMPATIBLE_PEER;
+  public static final com.epiccrown.directstream.api.CodecFailureReason PEER_UNAVAILABLE;
+  public static final com.epiccrown.directstream.api.CodecFailureReason BUSY;
+  public static final com.epiccrown.directstream.api.CodecFailureReason NO_ACTIVE_CALL;
+  public static final com.epiccrown.directstream.api.CodecFailureReason NEGOTIATION_FAILED;
+  public static final com.epiccrown.directstream.api.CodecFailureReason TIMEOUT;
+  public static final com.epiccrown.directstream.api.CodecFailureReason SESSION_ENDED;
+  public static com.epiccrown.directstream.api.CodecFailureReason[] values();
+  public static com.epiccrown.directstream.api.CodecFailureReason valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.CodecFailureReason> getEntries();
+}
+public final class com.epiccrown.directstream.api.CodecFormat$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecFormat> serializer();
+  public com.epiccrown.directstream.api.CodecFormat$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecFormat {
+  public static final com.epiccrown.directstream.api.CodecFormat$Companion Companion;
+  public com.epiccrown.directstream.api.CodecFormat(int, java.lang.Integer, java.util.Map<java.lang.String, java.lang.String>);
+  public com.epiccrown.directstream.api.CodecFormat(int, java.lang.Integer, java.util.Map, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final int getClockRate();
+  public final java.lang.Integer getChannels();
+  public final java.util.Map<java.lang.String, java.lang.String> getParameters();
+  public final int component1();
+  public final java.lang.Integer component2();
+  public final java.util.Map<java.lang.String, java.lang.String> component3();
+  public final com.epiccrown.directstream.api.CodecFormat copy(int, java.lang.Integer, java.util.Map<java.lang.String, java.lang.String>);
+  public static com.epiccrown.directstream.api.CodecFormat copy$default(com.epiccrown.directstream.api.CodecFormat, int, java.lang.Integer, java.util.Map, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CodecFormat, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CodecFormat(int, int, java.lang.Integer, java.util.Map, kotlinx.serialization.internal.SerializationConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecId$Companion {
+  public final java.util.Set<java.lang.String> getAuxiliaryCodecs();
+  public final com.epiccrown.directstream.api.CodecId getVP8();
+  public final com.epiccrown.directstream.api.CodecId getH264();
+  public final com.epiccrown.directstream.api.CodecId getVP9();
+  public final com.epiccrown.directstream.api.CodecId getAV1();
+  public final com.epiccrown.directstream.api.CodecId getOPUS();
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecId> serializer();
+  public com.epiccrown.directstream.api.CodecId$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecId {
+  public static final com.epiccrown.directstream.api.CodecId$Companion Companion;
+  public com.epiccrown.directstream.api.CodecId(java.lang.String);
+  public final java.lang.String getMimeType();
+  public final java.lang.String getName();
+  public final java.lang.String component1();
+  public final com.epiccrown.directstream.api.CodecId copy(java.lang.String);
+  public static com.epiccrown.directstream.api.CodecId copy$default(com.epiccrown.directstream.api.CodecId, java.lang.String, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CodecId, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CodecId(int, java.lang.String, kotlinx.serialization.internal.SerializationConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecImplementation$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecImplementation> serializer();
+  public com.epiccrown.directstream.api.CodecImplementation$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecImplementation extends java.lang.Enum<com.epiccrown.directstream.api.CodecImplementation> {
+  public static final com.epiccrown.directstream.api.CodecImplementation$Companion Companion;
+  public static final com.epiccrown.directstream.api.CodecImplementation HARDWARE;
+  public static final com.epiccrown.directstream.api.CodecImplementation SOFTWARE;
+  public static final com.epiccrown.directstream.api.CodecImplementation UNKNOWN;
+  public static com.epiccrown.directstream.api.CodecImplementation[] values();
+  public static com.epiccrown.directstream.api.CodecImplementation valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.CodecImplementation> getEntries();
+}
+public final class com.epiccrown.directstream.api.CodecPhase extends java.lang.Enum<com.epiccrown.directstream.api.CodecPhase> {
+  public static final com.epiccrown.directstream.api.CodecPhase IDLE;
+  public static final com.epiccrown.directstream.api.CodecPhase PREPARING;
+  public static final com.epiccrown.directstream.api.CodecPhase APPLYING;
+  public static final com.epiccrown.directstream.api.CodecPhase ACTIVE;
+  public static final com.epiccrown.directstream.api.CodecPhase ROLLING_BACK;
+  public static final com.epiccrown.directstream.api.CodecPhase FAILED;
+  public static com.epiccrown.directstream.api.CodecPhase[] values();
+  public static com.epiccrown.directstream.api.CodecPhase valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.CodecPhase> getEntries();
+}
+public final class com.epiccrown.directstream.api.CodecPolicy$Auto implements com.epiccrown.directstream.api.CodecPolicy {
+  public static final com.epiccrown.directstream.api.CodecPolicy$Auto INSTANCE;
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecPolicy$Auto> serializer();
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.CodecPolicy$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecPolicy> serializer();
+}
+public final class com.epiccrown.directstream.api.CodecPolicy$Enforce$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecPolicy$Enforce> serializer();
+  public com.epiccrown.directstream.api.CodecPolicy$Enforce$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecPolicy$Enforce implements com.epiccrown.directstream.api.CodecPolicy {
+  public static final com.epiccrown.directstream.api.CodecPolicy$Enforce$Companion Companion;
+  public com.epiccrown.directstream.api.CodecPolicy$Enforce(com.epiccrown.directstream.api.CodecId);
+  public final com.epiccrown.directstream.api.CodecId getCodec();
+  public final com.epiccrown.directstream.api.CodecId component1();
+  public final com.epiccrown.directstream.api.CodecPolicy$Enforce copy(com.epiccrown.directstream.api.CodecId);
+  public static com.epiccrown.directstream.api.CodecPolicy$Enforce copy$default(com.epiccrown.directstream.api.CodecPolicy$Enforce, com.epiccrown.directstream.api.CodecId, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CodecPolicy$Enforce, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CodecPolicy$Enforce(int, com.epiccrown.directstream.api.CodecId, kotlinx.serialization.internal.SerializationConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecPolicy$Prefer$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecPolicy$Prefer> serializer();
+  public com.epiccrown.directstream.api.CodecPolicy$Prefer$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecPolicy$Prefer implements com.epiccrown.directstream.api.CodecPolicy {
+  public static final com.epiccrown.directstream.api.CodecPolicy$Prefer$Companion Companion;
+  public com.epiccrown.directstream.api.CodecPolicy$Prefer(com.epiccrown.directstream.api.CodecId);
+  public final com.epiccrown.directstream.api.CodecId getCodec();
+  public final com.epiccrown.directstream.api.CodecId component1();
+  public final com.epiccrown.directstream.api.CodecPolicy$Prefer copy(com.epiccrown.directstream.api.CodecId);
+  public static com.epiccrown.directstream.api.CodecPolicy$Prefer copy$default(com.epiccrown.directstream.api.CodecPolicy$Prefer, com.epiccrown.directstream.api.CodecId, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CodecPolicy$Prefer, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CodecPolicy$Prefer(int, com.epiccrown.directstream.api.CodecId, kotlinx.serialization.internal.SerializationConstructorMarker);
+}
+public interface com.epiccrown.directstream.api.CodecPolicy {
+  public static final com.epiccrown.directstream.api.CodecPolicy$Companion Companion;
+}
+public final class com.epiccrown.directstream.api.CodecProposal$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecProposal> serializer();
+  public com.epiccrown.directstream.api.CodecProposal$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecProposal {
+  public static final com.epiccrown.directstream.api.CodecProposal$Companion Companion;
+  public com.epiccrown.directstream.api.CodecProposal(com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecSelection, boolean, boolean);
+  public com.epiccrown.directstream.api.CodecProposal(com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecSelection, boolean, boolean, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.CallCodecPreferences getSender();
+  public final com.epiccrown.directstream.api.CallCodecPreferences getReceiver();
+  public final com.epiccrown.directstream.api.CodecSelection getSelection();
+  public final boolean getRestartIce();
+  public final boolean getRollback();
+  public final com.epiccrown.directstream.api.CallCodecPreferences component1();
+  public final com.epiccrown.directstream.api.CallCodecPreferences component2();
+  public final com.epiccrown.directstream.api.CodecSelection component3();
+  public final boolean component4();
+  public final boolean component5();
+  public final com.epiccrown.directstream.api.CodecProposal copy(com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecSelection, boolean, boolean);
+  public static com.epiccrown.directstream.api.CodecProposal copy$default(com.epiccrown.directstream.api.CodecProposal, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecSelection, boolean, boolean, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CodecProposal, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CodecProposal(int, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecSelection, boolean, boolean, kotlinx.serialization.internal.SerializationConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecProtocol {
+  public static final com.epiccrown.directstream.api.CodecProtocol INSTANCE;
+  public static final int VERSION;
+  public final java.lang.String encode(com.epiccrown.directstream.api.CodecSignal);
+  public final com.epiccrown.directstream.api.CodecSignal decode(java.lang.String);
+}
+public final class com.epiccrown.directstream.api.CodecSelection$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecSelection> serializer();
+  public com.epiccrown.directstream.api.CodecSelection$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecSelection {
+  public static final com.epiccrown.directstream.api.CodecSelection$Companion Companion;
+  public com.epiccrown.directstream.api.CodecSelection(com.epiccrown.directstream.api.CodecId, com.epiccrown.directstream.api.CodecId);
+  public final com.epiccrown.directstream.api.CodecId getVideo();
+  public final com.epiccrown.directstream.api.CodecId getAudio();
+  public final com.epiccrown.directstream.api.CodecId component1();
+  public final com.epiccrown.directstream.api.CodecId component2();
+  public final com.epiccrown.directstream.api.CodecSelection copy(com.epiccrown.directstream.api.CodecId, com.epiccrown.directstream.api.CodecId);
+  public static com.epiccrown.directstream.api.CodecSelection copy$default(com.epiccrown.directstream.api.CodecSelection, com.epiccrown.directstream.api.CodecId, com.epiccrown.directstream.api.CodecId, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CodecSelection, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CodecSelection(int, com.epiccrown.directstream.api.CodecId, com.epiccrown.directstream.api.CodecId, kotlinx.serialization.internal.SerializationConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecSelector {
+  public static final com.epiccrown.directstream.api.CodecSelector INSTANCE;
+  public final void validateLocal(com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallMode);
+  public static void validateLocal$default(com.epiccrown.directstream.api.CodecSelector, com.epiccrown.directstream.api.CodecCapabilities, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CallMode, int, java.lang.Object);
+  public final com.epiccrown.directstream.api.CodecSelection select(com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CodecEndpoint);
+}
+public final class com.epiccrown.directstream.api.CodecSignal$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecSignal> serializer();
+  public com.epiccrown.directstream.api.CodecSignal$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecSignal {
+  public static final com.epiccrown.directstream.api.CodecSignal$Companion Companion;
+  public com.epiccrown.directstream.api.CodecSignal(java.lang.String, com.epiccrown.directstream.api.CodecSignalKind, com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecProposal, com.epiccrown.directstream.api.CodecFailureReason);
+  public com.epiccrown.directstream.api.CodecSignal(java.lang.String, com.epiccrown.directstream.api.CodecSignalKind, com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecProposal, com.epiccrown.directstream.api.CodecFailureReason, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.lang.String getTransactionId();
+  public final com.epiccrown.directstream.api.CodecSignalKind getKind();
+  public final com.epiccrown.directstream.api.CodecEndpoint getEndpoint();
+  public final com.epiccrown.directstream.api.CallCodecPreferences getPreferences();
+  public final com.epiccrown.directstream.api.CodecProposal getProposal();
+  public final com.epiccrown.directstream.api.CodecFailureReason getFailure();
+  public final java.lang.String component1();
+  public final com.epiccrown.directstream.api.CodecSignalKind component2();
+  public final com.epiccrown.directstream.api.CodecEndpoint component3();
+  public final com.epiccrown.directstream.api.CallCodecPreferences component4();
+  public final com.epiccrown.directstream.api.CodecProposal component5();
+  public final com.epiccrown.directstream.api.CodecFailureReason component6();
+  public final com.epiccrown.directstream.api.CodecSignal copy(java.lang.String, com.epiccrown.directstream.api.CodecSignalKind, com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecProposal, com.epiccrown.directstream.api.CodecFailureReason);
+  public static com.epiccrown.directstream.api.CodecSignal copy$default(com.epiccrown.directstream.api.CodecSignal, java.lang.String, com.epiccrown.directstream.api.CodecSignalKind, com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecProposal, com.epiccrown.directstream.api.CodecFailureReason, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public static final void write$Self$sdk_api(com.epiccrown.directstream.api.CodecSignal, kotlinx.serialization.encoding.CompositeEncoder, kotlinx.serialization.descriptors.SerialDescriptor);
+  public com.epiccrown.directstream.api.CodecSignal(int, java.lang.String, com.epiccrown.directstream.api.CodecSignalKind, com.epiccrown.directstream.api.CodecEndpoint, com.epiccrown.directstream.api.CallCodecPreferences, com.epiccrown.directstream.api.CodecProposal, com.epiccrown.directstream.api.CodecFailureReason, kotlinx.serialization.internal.SerializationConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecSignalKind$Companion {
+  public final kotlinx.serialization.KSerializer<com.epiccrown.directstream.api.CodecSignalKind> serializer();
+  public com.epiccrown.directstream.api.CodecSignalKind$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.api.CodecSignalKind extends java.lang.Enum<com.epiccrown.directstream.api.CodecSignalKind> {
+  public static final com.epiccrown.directstream.api.CodecSignalKind$Companion Companion;
+  public static final com.epiccrown.directstream.api.CodecSignalKind CAPABILITIES;
+  public static final com.epiccrown.directstream.api.CodecSignalKind REQUEST;
+  public static final com.epiccrown.directstream.api.CodecSignalKind PREPARE;
+  public static final com.epiccrown.directstream.api.CodecSignalKind READY;
+  public static final com.epiccrown.directstream.api.CodecSignalKind COMMIT;
+  public static final com.epiccrown.directstream.api.CodecSignalKind APPLIED;
+  public static final com.epiccrown.directstream.api.CodecSignalKind COMPLETE;
+  public static final com.epiccrown.directstream.api.CodecSignalKind REJECT;
+  public static final com.epiccrown.directstream.api.CodecSignalKind ABORT;
+  public static com.epiccrown.directstream.api.CodecSignalKind[] values();
+  public static com.epiccrown.directstream.api.CodecSignalKind valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.CodecSignalKind> getEntries();
+}
+public final class com.epiccrown.directstream.api.CodecsKt {
+  public static final com.epiccrown.directstream.api.CodecId codecOrNull(com.epiccrown.directstream.api.CodecPolicy);
+}
+public final class com.epiccrown.directstream.api.ConfigurationCheck {
+  public com.epiccrown.directstream.api.ConfigurationCheck(java.util.List<java.lang.String>, java.util.List<java.lang.String>);
+  public com.epiccrown.directstream.api.ConfigurationCheck(java.util.List, java.util.List, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.util.List<java.lang.String> getMissing();
+  public final java.util.List<java.lang.String> getInvalid();
+  public final boolean getValid();
+  public final java.util.List<java.lang.String> component1();
+  public final java.util.List<java.lang.String> component2();
+  public final com.epiccrown.directstream.api.ConfigurationCheck copy(java.util.List<java.lang.String>, java.util.List<java.lang.String>);
+  public static com.epiccrown.directstream.api.ConfigurationCheck copy$default(com.epiccrown.directstream.api.ConfigurationCheck, java.util.List, java.util.List, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public com.epiccrown.directstream.api.ConfigurationCheck();
+}
+public final class com.epiccrown.directstream.api.ConnectionType extends java.lang.Enum<com.epiccrown.directstream.api.ConnectionType> {
+  public static final com.epiccrown.directstream.api.ConnectionType DIRECT;
+  public static final com.epiccrown.directstream.api.ConnectionType RELAYED;
+  public static final com.epiccrown.directstream.api.ConnectionType UNKNOWN;
+  public static com.epiccrown.directstream.api.ConnectionType[] values();
+  public static com.epiccrown.directstream.api.ConnectionType valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.ConnectionType> getEntries();
+}
+public final class com.epiccrown.directstream.api.Device {
+  public com.epiccrown.directstream.api.Device(java.lang.String, boolean, java.lang.String, java.lang.Boolean, java.util.Set<? extends com.epiccrown.directstream.api.CallMode>, boolean, java.lang.String);
+  public com.epiccrown.directstream.api.Device(java.lang.String, boolean, java.lang.String, java.lang.Boolean, java.util.Set, boolean, java.lang.String, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.lang.String getCode();
+  public final boolean getRequestsEnabled();
+  public final java.lang.String getActiveRoomId();
+  public final java.lang.Boolean getRelayAvailable();
+  public final java.util.Set<com.epiccrown.directstream.api.CallMode> getSupportedCallModes();
+  public final boolean getRegistrationRevocationSupported();
+  public final java.lang.String getParticipantName();
+  public final java.lang.String component1();
+  public final boolean component2();
+  public final java.lang.String component3();
+  public final java.lang.Boolean component4();
+  public final java.util.Set<com.epiccrown.directstream.api.CallMode> component5();
+  public final boolean component6();
+  public final java.lang.String component7();
+  public final com.epiccrown.directstream.api.Device copy(java.lang.String, boolean, java.lang.String, java.lang.Boolean, java.util.Set<? extends com.epiccrown.directstream.api.CallMode>, boolean, java.lang.String);
+  public static com.epiccrown.directstream.api.Device copy$default(com.epiccrown.directstream.api.Device, java.lang.String, boolean, java.lang.String, java.lang.Boolean, java.util.Set, boolean, java.lang.String, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.DeviceCode {
+  public static final com.epiccrown.directstream.api.DeviceCode INSTANCE;
+  public static final java.lang.String ALPHABET;
+  public final java.lang.String normalize(java.lang.String);
+  public final java.lang.String format(java.lang.String);
+}
+public final class com.epiccrown.directstream.api.DeviceOwnershipProof {
+  public com.epiccrown.directstream.api.DeviceOwnershipProof(java.lang.String, java.lang.String, long);
+  public final java.lang.String getValue();
+  public final java.lang.String getProvider();
+  public final long getExpiresAtMillis();
+  public java.lang.String toString();
+}
+public final class com.epiccrown.directstream.api.FailureKind extends java.lang.Enum<com.epiccrown.directstream.api.FailureKind> {
+  public static final com.epiccrown.directstream.api.FailureKind CONFIGURATION;
+  public static final com.epiccrown.directstream.api.FailureKind INVALID_INPUT;
+  public static final com.epiccrown.directstream.api.FailureKind BUSY;
+  public static final com.epiccrown.directstream.api.FailureKind UNAUTHORIZED;
+  public static final com.epiccrown.directstream.api.FailureKind UNAVAILABLE;
+  public static final com.epiccrown.directstream.api.FailureKind EXPIRED;
+  public static final com.epiccrown.directstream.api.FailureKind PERMISSION;
+  public static final com.epiccrown.directstream.api.FailureKind DISPOSED;
+  public static final com.epiccrown.directstream.api.FailureKind INTERNAL;
+  public static final com.epiccrown.directstream.api.FailureKind CODEC;
+  public static final com.epiccrown.directstream.api.FailureKind UNSUPPORTED;
+  public static com.epiccrown.directstream.api.FailureKind[] values();
+  public static com.epiccrown.directstream.api.FailureKind valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.FailureKind> getEntries();
+}
+public final class com.epiccrown.directstream.api.IceServer {
+  public com.epiccrown.directstream.api.IceServer(java.util.List<java.lang.String>, java.lang.String, java.lang.String);
+  public com.epiccrown.directstream.api.IceServer(java.util.List, java.lang.String, java.lang.String, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.util.List<java.lang.String> getUrls();
+  public final java.lang.String getUsername();
+  public final java.lang.String getCredential();
+  public final java.util.List<java.lang.String> component1();
+  public final java.lang.String component2();
+  public final java.lang.String component3();
+  public final com.epiccrown.directstream.api.IceServer copy(java.util.List<java.lang.String>, java.lang.String, java.lang.String);
+  public static com.epiccrown.directstream.api.IceServer copy$default(com.epiccrown.directstream.api.IceServer, java.util.List, java.lang.String, java.lang.String, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.IdentityProvider$DefaultImpls {
+  public static java.lang.Object ownershipProof(com.epiccrown.directstream.api.IdentityProvider, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.DeviceOwnershipProof>);
+}
+public interface com.epiccrown.directstream.api.IdentityProvider {
+  public abstract java.lang.Object signIn(kotlin.coroutines.Continuation<? super java.lang.String>);
+  public default java.lang.Object ownershipProof(kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.DeviceOwnershipProof>);
+  public static java.lang.Object ownershipProof$suspendImpl(com.epiccrown.directstream.api.IdentityProvider, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.DeviceOwnershipProof>);
+}
+public final class com.epiccrown.directstream.api.MediaMetrics {
+  public com.epiccrown.directstream.api.MediaMetrics(java.lang.String, java.lang.Double, java.lang.Integer, java.lang.Integer, java.lang.Double, java.lang.Long, java.lang.Long, java.lang.Long, java.lang.Double, java.lang.String, java.lang.String);
+  public com.epiccrown.directstream.api.MediaMetrics(java.lang.String, java.lang.Double, java.lang.Integer, java.lang.Integer, java.lang.Double, java.lang.Long, java.lang.Long, java.lang.Long, java.lang.Double, java.lang.String, java.lang.String, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.lang.String getCodec();
+  public final java.lang.Double getBitrateKbps();
+  public final java.lang.Integer getWidth();
+  public final java.lang.Integer getHeight();
+  public final java.lang.Double getFps();
+  public final java.lang.Long getPacketsLost();
+  public final java.lang.Long getDroppedFrames();
+  public final java.lang.Long getFrames();
+  public final java.lang.Double getAudioLevel();
+  public final java.lang.String getCodecProfile();
+  public final java.lang.String getImplementation();
+  public final java.lang.String component1();
+  public final java.lang.Double component2();
+  public final java.lang.Integer component3();
+  public final java.lang.Integer component4();
+  public final java.lang.Double component5();
+  public final java.lang.Long component6();
+  public final java.lang.Long component7();
+  public final java.lang.Long component8();
+  public final java.lang.Double component9();
+  public final java.lang.String component10();
+  public final java.lang.String component11();
+  public final com.epiccrown.directstream.api.MediaMetrics copy(java.lang.String, java.lang.Double, java.lang.Integer, java.lang.Integer, java.lang.Double, java.lang.Long, java.lang.Long, java.lang.Long, java.lang.Double, java.lang.String, java.lang.String);
+  public static com.epiccrown.directstream.api.MediaMetrics copy$default(com.epiccrown.directstream.api.MediaMetrics, java.lang.String, java.lang.Double, java.lang.Integer, java.lang.Integer, java.lang.Double, java.lang.Long, java.lang.Long, java.lang.Long, java.lang.Double, java.lang.String, java.lang.String, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public com.epiccrown.directstream.api.MediaMetrics();
+}
+public final class com.epiccrown.directstream.api.PairingRequest {
+  public com.epiccrown.directstream.api.PairingRequest(java.lang.String, java.lang.String, long, java.lang.String, java.lang.String, com.epiccrown.directstream.api.Role, java.lang.String, java.lang.Long, com.epiccrown.directstream.api.CallMode, java.lang.String);
+  public com.epiccrown.directstream.api.PairingRequest(java.lang.String, java.lang.String, long, java.lang.String, java.lang.String, com.epiccrown.directstream.api.Role, java.lang.String, java.lang.Long, com.epiccrown.directstream.api.CallMode, java.lang.String, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.lang.String getRequestId();
+  public final java.lang.String getVerificationValue();
+  public final long getExpiresAt();
+  public final java.lang.String getStatus();
+  public final java.lang.String getRoomId();
+  public final com.epiccrown.directstream.api.Role getRole();
+  public final java.lang.String getPeerCode();
+  public final java.lang.Long getCreatedAt();
+  public final com.epiccrown.directstream.api.CallMode getMode();
+  public final java.lang.String getPeerName();
+  public final java.lang.String component1();
+  public final java.lang.String component2();
+  public final long component3();
+  public final java.lang.String component4();
+  public final java.lang.String component5();
+  public final com.epiccrown.directstream.api.Role component6();
+  public final java.lang.String component7();
+  public final java.lang.Long component8();
+  public final com.epiccrown.directstream.api.CallMode component9();
+  public final java.lang.String component10();
+  public final com.epiccrown.directstream.api.PairingRequest copy(java.lang.String, java.lang.String, long, java.lang.String, java.lang.String, com.epiccrown.directstream.api.Role, java.lang.String, java.lang.Long, com.epiccrown.directstream.api.CallMode, java.lang.String);
+  public static com.epiccrown.directstream.api.PairingRequest copy$default(com.epiccrown.directstream.api.PairingRequest, java.lang.String, java.lang.String, long, java.lang.String, java.lang.String, com.epiccrown.directstream.api.Role, java.lang.String, java.lang.Long, com.epiccrown.directstream.api.CallMode, java.lang.String, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.ParticipantName {
+  public static final com.epiccrown.directstream.api.ParticipantName INSTANCE;
+  public final java.lang.String normalize(java.lang.String);
+}
+public final class com.epiccrown.directstream.api.ProviderKt {
+  public static final com.epiccrown.directstream.api.CallFailure callFailure(java.lang.Throwable);
+  public static final com.epiccrown.directstream.api.CallFailure callFailure(java.lang.Throwable, android.content.res.Resources);
+}
+public final class com.epiccrown.directstream.api.PushHandlingResult$Handled implements com.epiccrown.directstream.api.PushHandlingResult {
+  public static final com.epiccrown.directstream.api.PushHandlingResult$Handled INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.PushHandlingResult$Inactive implements com.epiccrown.directstream.api.PushHandlingResult {
+  public static final com.epiccrown.directstream.api.PushHandlingResult$Inactive INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.PushHandlingResult$RetryableFailure implements com.epiccrown.directstream.api.PushHandlingResult {
+  public com.epiccrown.directstream.api.PushHandlingResult$RetryableFailure(com.epiccrown.directstream.api.CallFailure);
+  public final com.epiccrown.directstream.api.CallFailure getFailure();
+  public final com.epiccrown.directstream.api.CallFailure component1();
+  public final com.epiccrown.directstream.api.PushHandlingResult$RetryableFailure copy(com.epiccrown.directstream.api.CallFailure);
+  public static com.epiccrown.directstream.api.PushHandlingResult$RetryableFailure copy$default(com.epiccrown.directstream.api.PushHandlingResult$RetryableFailure, com.epiccrown.directstream.api.CallFailure, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.PushHandlingResult$Stale implements com.epiccrown.directstream.api.PushHandlingResult {
+  public static final com.epiccrown.directstream.api.PushHandlingResult$Stale INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.PushHandlingResult$Unrelated implements com.epiccrown.directstream.api.PushHandlingResult {
+  public static final com.epiccrown.directstream.api.PushHandlingResult$Unrelated INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public interface com.epiccrown.directstream.api.PushHandlingResult {
+}
+public final class com.epiccrown.directstream.api.PushProvider$DefaultImpls {
+  public static boolean isIncomingMessage(com.epiccrown.directstream.api.PushProvider, java.util.Map<java.lang.String, java.lang.String>);
+}
+public interface com.epiccrown.directstream.api.PushProvider {
+  public default boolean isIncomingMessage(java.util.Map<java.lang.String, java.lang.String>);
+  public abstract java.lang.Object currentToken(kotlin.coroutines.Continuation<? super java.lang.String>);
+  public abstract java.lang.Object registerToken(java.lang.String, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+}
+public final class com.epiccrown.directstream.api.PushReadiness extends java.lang.Enum<com.epiccrown.directstream.api.PushReadiness> {
+  public static final com.epiccrown.directstream.api.PushReadiness MissingToken;
+  public static final com.epiccrown.directstream.api.PushReadiness Queued;
+  public static final com.epiccrown.directstream.api.PushReadiness Registered;
+  public static final com.epiccrown.directstream.api.PushReadiness Unavailable;
+  public static final com.epiccrown.directstream.api.PushReadiness Failed;
+  public static com.epiccrown.directstream.api.PushReadiness[] values();
+  public static com.epiccrown.directstream.api.PushReadiness valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.PushReadiness> getEntries();
+}
+public final class com.epiccrown.directstream.api.PushTokenResult$Failure implements com.epiccrown.directstream.api.PushTokenResult {
+  public com.epiccrown.directstream.api.PushTokenResult$Failure(com.epiccrown.directstream.api.CallFailure);
+  public final com.epiccrown.directstream.api.CallFailure getFailure();
+  public final com.epiccrown.directstream.api.CallFailure component1();
+  public final com.epiccrown.directstream.api.PushTokenResult$Failure copy(com.epiccrown.directstream.api.CallFailure);
+  public static com.epiccrown.directstream.api.PushTokenResult$Failure copy$default(com.epiccrown.directstream.api.PushTokenResult$Failure, com.epiccrown.directstream.api.CallFailure, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.PushTokenResult$Queued implements com.epiccrown.directstream.api.PushTokenResult {
+  public static final com.epiccrown.directstream.api.PushTokenResult$Queued INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.PushTokenResult$Registered implements com.epiccrown.directstream.api.PushTokenResult {
+  public static final com.epiccrown.directstream.api.PushTokenResult$Registered INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public interface com.epiccrown.directstream.api.PushTokenResult {
+}
+public final class com.epiccrown.directstream.api.RegistrationPhase extends java.lang.Enum<com.epiccrown.directstream.api.RegistrationPhase> {
+  public static final com.epiccrown.directstream.api.RegistrationPhase Inactive;
+  public static final com.epiccrown.directstream.api.RegistrationPhase Activating;
+  public static final com.epiccrown.directstream.api.RegistrationPhase Active;
+  public static final com.epiccrown.directstream.api.RegistrationPhase CleanupPending;
+  public static com.epiccrown.directstream.api.RegistrationPhase[] values();
+  public static com.epiccrown.directstream.api.RegistrationPhase valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.RegistrationPhase> getEntries();
+}
+public final class com.epiccrown.directstream.api.RegistrationState {
+  public com.epiccrown.directstream.api.RegistrationState(com.epiccrown.directstream.api.RegistrationPhase, com.epiccrown.directstream.api.Device, com.epiccrown.directstream.api.CallFailure);
+  public com.epiccrown.directstream.api.RegistrationState(com.epiccrown.directstream.api.RegistrationPhase, com.epiccrown.directstream.api.Device, com.epiccrown.directstream.api.CallFailure, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.RegistrationPhase getPhase();
+  public final com.epiccrown.directstream.api.Device getDevice();
+  public final com.epiccrown.directstream.api.CallFailure getFailure();
+  public final com.epiccrown.directstream.api.RegistrationPhase component1();
+  public final com.epiccrown.directstream.api.Device component2();
+  public final com.epiccrown.directstream.api.CallFailure component3();
+  public final com.epiccrown.directstream.api.RegistrationState copy(com.epiccrown.directstream.api.RegistrationPhase, com.epiccrown.directstream.api.Device, com.epiccrown.directstream.api.CallFailure);
+  public static com.epiccrown.directstream.api.RegistrationState copy$default(com.epiccrown.directstream.api.RegistrationState, com.epiccrown.directstream.api.RegistrationPhase, com.epiccrown.directstream.api.Device, com.epiccrown.directstream.api.CallFailure, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public com.epiccrown.directstream.api.RegistrationState();
+}
+public interface com.epiccrown.directstream.api.RelayProvider {
+  public abstract java.lang.Object iceServers(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.TurnConfiguration>);
+}
+public final class com.epiccrown.directstream.api.RelayReadiness extends java.lang.Enum<com.epiccrown.directstream.api.RelayReadiness> {
+  public static final com.epiccrown.directstream.api.RelayReadiness Unknown;
+  public static final com.epiccrown.directstream.api.RelayReadiness DirectOnly;
+  public static final com.epiccrown.directstream.api.RelayReadiness Configured;
+  public static com.epiccrown.directstream.api.RelayReadiness[] values();
+  public static com.epiccrown.directstream.api.RelayReadiness valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.RelayReadiness> getEntries();
+}
+public final class com.epiccrown.directstream.api.Role extends java.lang.Enum<com.epiccrown.directstream.api.Role> {
+  public static final com.epiccrown.directstream.api.Role SENDER;
+  public static final com.epiccrown.directstream.api.Role RECEIVER;
+  public static com.epiccrown.directstream.api.Role[] values();
+  public static com.epiccrown.directstream.api.Role valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.Role> getEntries();
+}
+public final class com.epiccrown.directstream.api.Room {
+  public com.epiccrown.directstream.api.Room(java.lang.String, java.lang.String, java.lang.String, long, com.epiccrown.directstream.api.CallMode);
+  public com.epiccrown.directstream.api.Room(java.lang.String, java.lang.String, java.lang.String, long, com.epiccrown.directstream.api.CallMode, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.lang.String getRoomId();
+  public final java.lang.String getHostUid();
+  public final java.lang.String getGuestUid();
+  public final long getExpiresAt();
+  public final com.epiccrown.directstream.api.CallMode getMode();
+  public final java.lang.String component1();
+  public final java.lang.String component2();
+  public final java.lang.String component3();
+  public final long component4();
+  public final com.epiccrown.directstream.api.CallMode component5();
+  public final com.epiccrown.directstream.api.Room copy(java.lang.String, java.lang.String, java.lang.String, long, com.epiccrown.directstream.api.CallMode);
+  public static com.epiccrown.directstream.api.Room copy$default(com.epiccrown.directstream.api.Room, java.lang.String, java.lang.String, java.lang.String, long, com.epiccrown.directstream.api.CallMode, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.SessionStatus {
+  public com.epiccrown.directstream.api.SessionStatus(boolean, long);
+  public final boolean getActive();
+  public final long getExpiresAt();
+  public final boolean component1();
+  public final long component2();
+  public final com.epiccrown.directstream.api.SessionStatus copy(boolean, long);
+  public static com.epiccrown.directstream.api.SessionStatus copy$default(com.epiccrown.directstream.api.SessionStatus, boolean, long, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.SignalCandidate {
+  public com.epiccrown.directstream.api.SignalCandidate(java.lang.String, java.lang.String, int, java.lang.String);
+  public final java.lang.String getId();
+  public final java.lang.String getSdpMid();
+  public final int getSdpMLineIndex();
+  public final java.lang.String getCandidate();
+  public final java.lang.String component1();
+  public final java.lang.String component2();
+  public final int component3();
+  public final java.lang.String component4();
+  public final com.epiccrown.directstream.api.SignalCandidate copy(java.lang.String, java.lang.String, int, java.lang.String);
+  public static com.epiccrown.directstream.api.SignalCandidate copy$default(com.epiccrown.directstream.api.SignalCandidate, java.lang.String, java.lang.String, int, java.lang.String, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.SignalDescription {
+  public com.epiccrown.directstream.api.SignalDescription(java.lang.String, java.lang.String, java.lang.String);
+  public com.epiccrown.directstream.api.SignalDescription(java.lang.String, java.lang.String, java.lang.String, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.lang.String getType();
+  public final java.lang.String getSdp();
+  public final java.lang.String getNegotiationId();
+  public final java.lang.String component1();
+  public final java.lang.String component2();
+  public final java.lang.String component3();
+  public final com.epiccrown.directstream.api.SignalDescription copy(java.lang.String, java.lang.String, java.lang.String);
+  public static com.epiccrown.directstream.api.SignalDescription copy$default(com.epiccrown.directstream.api.SignalDescription, java.lang.String, java.lang.String, java.lang.String, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.SignalingProvider$DefaultImpls {
+  public static java.lang.Object publishCodecSignal(com.epiccrown.directstream.api.SignalingProvider, java.lang.String, com.epiccrown.directstream.api.Role, com.epiccrown.directstream.api.CodecSignal, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public static kotlinx.coroutines.flow.Flow<com.epiccrown.directstream.api.CodecSignal> codecSignals(com.epiccrown.directstream.api.SignalingProvider, java.lang.String, com.epiccrown.directstream.api.Role);
+  public static kotlinx.coroutines.flow.Flow<java.lang.Boolean> connectionStates(com.epiccrown.directstream.api.SignalingProvider);
+}
+public interface com.epiccrown.directstream.api.SignalingProvider {
+  public default java.lang.Object publishCodecSignal(java.lang.String, com.epiccrown.directstream.api.Role, com.epiccrown.directstream.api.CodecSignal, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public static java.lang.Object publishCodecSignal$suspendImpl(com.epiccrown.directstream.api.SignalingProvider, java.lang.String, com.epiccrown.directstream.api.Role, com.epiccrown.directstream.api.CodecSignal, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public default kotlinx.coroutines.flow.Flow<com.epiccrown.directstream.api.CodecSignal> codecSignals(java.lang.String, com.epiccrown.directstream.api.Role);
+  public default kotlinx.coroutines.flow.Flow<java.lang.Boolean> connectionStates();
+  public abstract java.lang.Object getRoom(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.Room>);
+  public abstract java.lang.Object publishDescription(java.lang.String, com.epiccrown.directstream.api.Role, com.epiccrown.directstream.api.SignalDescription, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public abstract kotlinx.coroutines.flow.Flow<com.epiccrown.directstream.api.SignalDescription> descriptions(java.lang.String, com.epiccrown.directstream.api.Role);
+  public abstract java.lang.Object publishCandidate(java.lang.String, com.epiccrown.directstream.api.Role, com.epiccrown.directstream.api.SignalCandidate, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public abstract kotlinx.coroutines.flow.Flow<com.epiccrown.directstream.api.SignalCandidate> candidates(java.lang.String, com.epiccrown.directstream.api.Role);
+  public abstract kotlinx.coroutines.flow.Flow<java.lang.Boolean> ended(java.lang.String);
+  public abstract java.lang.Object presence(java.lang.String, com.epiccrown.directstream.api.Role, boolean, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+}
+public final class com.epiccrown.directstream.api.StreamPermissions {
+  public static final com.epiccrown.directstream.api.StreamPermissions INSTANCE;
+  public static final java.lang.String CAMERA;
+  public static final java.lang.String LOCAL_NETWORK;
+  public final java.util.List<java.lang.String> required(int, com.epiccrown.directstream.api.Role, com.epiccrown.directstream.api.CallMode);
+  public static java.util.List required$default(com.epiccrown.directstream.api.StreamPermissions, int, com.epiccrown.directstream.api.Role, com.epiccrown.directstream.api.CallMode, int, java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.StreamSessionState$AwaitingApproval implements com.epiccrown.directstream.api.StreamSessionState {
+  public com.epiccrown.directstream.api.StreamSessionState$AwaitingApproval(com.epiccrown.directstream.api.PairingRequest);
+  public final com.epiccrown.directstream.api.PairingRequest getRequest();
+  public final com.epiccrown.directstream.api.PairingRequest component1();
+  public final com.epiccrown.directstream.api.StreamSessionState$AwaitingApproval copy(com.epiccrown.directstream.api.PairingRequest);
+  public static com.epiccrown.directstream.api.StreamSessionState$AwaitingApproval copy$default(com.epiccrown.directstream.api.StreamSessionState$AwaitingApproval, com.epiccrown.directstream.api.PairingRequest, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.StreamSessionState$Connected implements com.epiccrown.directstream.api.StreamSessionState {
+  public com.epiccrown.directstream.api.StreamSessionState$Connected(com.epiccrown.directstream.api.Role);
+  public final com.epiccrown.directstream.api.Role getRole();
+  public final com.epiccrown.directstream.api.Role component1();
+  public final com.epiccrown.directstream.api.StreamSessionState$Connected copy(com.epiccrown.directstream.api.Role);
+  public static com.epiccrown.directstream.api.StreamSessionState$Connected copy$default(com.epiccrown.directstream.api.StreamSessionState$Connected, com.epiccrown.directstream.api.Role, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.StreamSessionState$Failed implements com.epiccrown.directstream.api.StreamSessionState {
+  public com.epiccrown.directstream.api.StreamSessionState$Failed(java.lang.String);
+  public final java.lang.String getReason();
+  public final java.lang.String component1();
+  public final com.epiccrown.directstream.api.StreamSessionState$Failed copy(java.lang.String);
+  public static com.epiccrown.directstream.api.StreamSessionState$Failed copy$default(com.epiccrown.directstream.api.StreamSessionState$Failed, java.lang.String, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.StreamSessionState$Idle implements com.epiccrown.directstream.api.StreamSessionState {
+  public static final com.epiccrown.directstream.api.StreamSessionState$Idle INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.StreamSessionState$IncomingRequest implements com.epiccrown.directstream.api.StreamSessionState {
+  public com.epiccrown.directstream.api.StreamSessionState$IncomingRequest(com.epiccrown.directstream.api.PairingRequest);
+  public final com.epiccrown.directstream.api.PairingRequest getRequest();
+  public final com.epiccrown.directstream.api.PairingRequest component1();
+  public final com.epiccrown.directstream.api.StreamSessionState$IncomingRequest copy(com.epiccrown.directstream.api.PairingRequest);
+  public static com.epiccrown.directstream.api.StreamSessionState$IncomingRequest copy$default(com.epiccrown.directstream.api.StreamSessionState$IncomingRequest, com.epiccrown.directstream.api.PairingRequest, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.StreamSessionState$Negotiating implements com.epiccrown.directstream.api.StreamSessionState {
+  public static final com.epiccrown.directstream.api.StreamSessionState$Negotiating INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.StreamSessionState$Reconnecting implements com.epiccrown.directstream.api.StreamSessionState {
+  public static final com.epiccrown.directstream.api.StreamSessionState$Reconnecting INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.StreamSessionState$RequestingConnection implements com.epiccrown.directstream.api.StreamSessionState {
+  public static final com.epiccrown.directstream.api.StreamSessionState$RequestingConnection INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public interface com.epiccrown.directstream.api.StreamSessionState {
+}
+public final class com.epiccrown.directstream.api.StreamStats {
+  public com.epiccrown.directstream.api.StreamStats(com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.ConnectionType, java.lang.Double, java.lang.String, java.lang.String, long, long);
+  public com.epiccrown.directstream.api.StreamStats(com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.ConnectionType, java.lang.Double, java.lang.String, java.lang.String, long, long, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.MediaMetrics getVideoIn();
+  public final com.epiccrown.directstream.api.MediaMetrics getVideoOut();
+  public final com.epiccrown.directstream.api.MediaMetrics getAudioIn();
+  public final com.epiccrown.directstream.api.MediaMetrics getAudioOut();
+  public final com.epiccrown.directstream.api.ConnectionType getTransport();
+  public final java.lang.Double getRttMs();
+  public final java.lang.String getIceState();
+  public final java.lang.String getPeerState();
+  public final long getSampledAtMs();
+  public final long getElapsedMs();
+  public final java.lang.String getCodec();
+  public final int getWidth();
+  public final int getHeight();
+  public final double getFps();
+  public final double getBitrateKbps();
+  public final long getPacketsLost();
+  public final long getDroppedFrames();
+  public final com.epiccrown.directstream.api.MediaMetrics component1();
+  public final com.epiccrown.directstream.api.MediaMetrics component2();
+  public final com.epiccrown.directstream.api.MediaMetrics component3();
+  public final com.epiccrown.directstream.api.MediaMetrics component4();
+  public final com.epiccrown.directstream.api.ConnectionType component5();
+  public final java.lang.Double component6();
+  public final java.lang.String component7();
+  public final java.lang.String component8();
+  public final long component9();
+  public final long component10();
+  public final com.epiccrown.directstream.api.StreamStats copy(com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.ConnectionType, java.lang.Double, java.lang.String, java.lang.String, long, long);
+  public static com.epiccrown.directstream.api.StreamStats copy$default(com.epiccrown.directstream.api.StreamStats, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.MediaMetrics, com.epiccrown.directstream.api.ConnectionType, java.lang.Double, java.lang.String, java.lang.String, long, long, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public com.epiccrown.directstream.api.StreamStats();
+}
+public final class com.epiccrown.directstream.api.TurnConfiguration {
+  public com.epiccrown.directstream.api.TurnConfiguration(java.util.List<com.epiccrown.directstream.api.IceServer>, long);
+  public final java.util.List<com.epiccrown.directstream.api.IceServer> getServers();
+  public final long getExpiresAt();
+  public final java.util.List<com.epiccrown.directstream.api.IceServer> component1();
+  public final long component2();
+  public final com.epiccrown.directstream.api.TurnConfiguration copy(java.util.List<com.epiccrown.directstream.api.IceServer>, long);
+  public static com.epiccrown.directstream.api.TurnConfiguration copy$default(com.epiccrown.directstream.api.TurnConfiguration, java.util.List, long, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.ValueResult$Failure implements com.epiccrown.directstream.api.ValueResult {
+  public com.epiccrown.directstream.api.ValueResult$Failure(com.epiccrown.directstream.api.CallFailure);
+  public final com.epiccrown.directstream.api.CallFailure getFailure();
+  public final com.epiccrown.directstream.api.CallFailure component1();
+  public final com.epiccrown.directstream.api.ValueResult$Failure copy(com.epiccrown.directstream.api.CallFailure);
+  public static com.epiccrown.directstream.api.ValueResult$Failure copy$default(com.epiccrown.directstream.api.ValueResult$Failure, com.epiccrown.directstream.api.CallFailure, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.api.ValueResult$Success<T> implements com.epiccrown.directstream.api.ValueResult<T> {
+  public com.epiccrown.directstream.api.ValueResult$Success(T);
+  public final T getValue();
+  public final T component1();
+  public final com.epiccrown.directstream.api.ValueResult$Success<T> copy(T);
+  public static com.epiccrown.directstream.api.ValueResult$Success copy$default(com.epiccrown.directstream.api.ValueResult$Success, java.lang.Object, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public interface com.epiccrown.directstream.api.ValueResult<T> {
+}
+public final class com.epiccrown.directstream.api.VideoStream extends java.lang.Enum<com.epiccrown.directstream.api.VideoStream> {
+  public static final com.epiccrown.directstream.api.VideoStream LOCAL;
+  public static final com.epiccrown.directstream.api.VideoStream REMOTE;
+  public static com.epiccrown.directstream.api.VideoStream[] values();
+  public static com.epiccrown.directstream.api.VideoStream valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.api.VideoStream> getEntries();
+}

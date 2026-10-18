@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:networkSecurityConfig="@xml/sdk_debug_network_security">
+        <activity
+            android:name="com.epiccrown.directstream.showcase.integration.SdkTestActivity"
+            android:exported="false"
+        />
+    </application>
+</manifest>

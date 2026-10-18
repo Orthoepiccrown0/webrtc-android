@@ -1,0 +1,48 @@
+# Android/Gradle generated files and machine-local settings
+.gradle/
+.kotlin/
+build/
+.externalNativeBuild/
+.cxx/
+local.properties
+*.iml
+.idea/
+captures/
+*.apk
+*.aab
+
+# Node and Cloudflare generated files
+node_modules/
+.wrangler/
+coverage/
+
+# Local configuration, credentials, and signing material
+stream.properties
+signing.properties
+/signing/
+google-services.json
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+!.env.example
+!.env.sample
+*.service-account.json
+service-account*.json
+serviceAccount*.json
+*-firebase-adminsdk-*.json
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+
+# Logs and operating-system metadata
+*.log
+.DS_Store
+Thumbs.db
+
+# Private migration backups and JVM crash dumps
+/backups/
+*.hprof

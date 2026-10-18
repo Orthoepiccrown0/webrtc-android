@@ -1,0 +1,453 @@
+<resources>
+    <string name="app_name">DirectStream SDK Showcase</string>
+    <string name="brand_name" translatable="false">DirectStream SDK</string>
+    <string name="connection_requests">Connection requests</string>
+
+    <string name="ds_ui_retry_setup">"Retry setup"</string>
+    <string name="ds_ui_call_a_device">"Call a device"</string>
+    <string name="ds_ui_settings">"Settings"</string>
+    <string name="ds_ui_direct_stream" translatable="false">"DirectStream SDK"</string>
+    <string
+        name="ds_ui_private_video_calls_by_device_code"
+    >"Private video calls by device code"</string>
+    <string name="ds_ui_call_in_progress">"Call in progress"</string>
+    <string name="ds_ui_network_unavailable">"Network unavailable"</string>
+    <string name="ds_ui_connecting">"Connecting…"</string>
+    <string name="ds_ui_ready_to_receive_requests">"Ready to receive requests"</string>
+    <string
+        name="ds_ui_enable_notifications_for_background_alerts"
+    >"Enable notifications for background alerts."</string>
+    <string
+        name="ds_ui_every_call_requires_your_acceptance"
+    >"Every call requires your acceptance."</string>
+    <string name="ds_ui_return_to_call">"Return to call"</string>
+    <string name="ds_ui_end_call">"End call"</string>
+    <string name="ds_ui_your_device_code">"YOUR DEVICE CODE"</string>
+    <string
+        name="ds_ui_share_your_code_or_qr_to_receive_a_request"
+    >"Share your code or QR to receive a request."</string>
+    <string name="ds_ui_copy">"Copy"</string>
+    <string name="ds_ui_share">"Share"</string>
+    <string name="ds_ui_refresh_code">"Refresh code"</string>
+    <string name="ds_ui_scan_to_call">"SCAN TO CALL"</string>
+    <string name="ds_ui_update_code">"Update code"</string>
+    <string name="ds_ui_remove">"Remove"</string>
+    <string name="ds_ui_call">"Call"</string>
+    <string name="ds_ui_device_code">"Device code"</string>
+    <string name="ds_ui_request_connection">"Request connection"</string>
+    <string name="ds_ui_scan_qr">"Scan QR"</string>
+    <string name="ds_ui_calling">"Calling…"</string>
+    <string
+        name="ds_ui_waiting_for_the_other_device_to_accept"
+    >"Waiting for the other device to accept"</string>
+    <string name="ds_ui_cancel_request">"Cancel request"</string>
+    <string name="ds_ui_build_with_direct_stream">"Build with DirectStream SDK"</string>
+    <string name="ds_ui_integration_guide">"Integration guide"</string>
+    <string
+        name="ds_ui_add_the_sdk_initialize_your_provider_and_display_a_call_flow"
+    >"Register a device, link it to your user directory and add call screens."</string>
+    <string name="ds_ui_view_guide">"View guide"</string>
+    <string name="ds_ui_permissions_call_alerts">"Permissions &amp; call alerts"</string>
+    <string name="ds_ui_camera">"Camera"</string>
+    <string name="ds_ui_allowed">"Allowed"</string>
+    <string name="ds_ui_required_before_starting_video">"Required before starting video"</string>
+    <string name="ds_ui_app_settings">"App settings"</string>
+    <string name="ds_ui_microphone">"Microphone"</string>
+    <string name="ds_ui_call_notifications">"Call notifications"</string>
+    <string
+        name="ds_ui_enabled_delivery_is_best_effort"
+    >"Enabled · delivery is best-effort"</string>
+    <string
+        name="ds_ui_disabled_or_blocked_open_the_sample_to_check_requests"
+    >"Disabled or blocked · open the sample to check requests"</string>
+    <string name="ds_ui_notification_settings">"Notification settings"</string>
+    <string name="ds_ui_enable_notifications">"Enable notifications"</string>
+    <string name="ds_ui_open_notification_settings">"Open notification settings"</string>
+    <string name="ds_ui_full_screen_call_alerts">"Full-screen call alerts"</string>
+    <string
+        name="ds_ui_allowed_android_controls_lock_screen_presentation"
+    >"Allowed · Android controls lock-screen presentation"</string>
+    <string
+        name="ds_ui_not_allowed_incoming_call_helper_is_optional"
+    >"Not allowed · regular notifications remain available"</string>
+    <string name="ds_ui_manage_alerts">"Manage alerts"</string>
+    <string name="ds_ui_sample_data">"Sample data"</string>
+    <string name="ds_ui_recent_calls">"Recent calls"</string>
+    <string name="ds_ui_clear_recents">"Clear recents"</string>
+    <string name="ds_ui_direct_stream_sdk_sample">"DirectStream SDK sample"</string>
+    <string name="ds_ui_setup_status">"Setup status"</string>
+    <string name="ds_ui_provider_not_initialized">"Provider not initialized"</string>
+    <string name="ds_ui_configuration_not_checked">"Configuration not checked"</string>
+    <string name="ds_ui_configuration_valid_locally">"Configuration valid locally"</string>
+    <string name="ds_ui_configuration_needs_attention">"Configuration needs attention"</string>
+    <string name="ds_ui_services">"Services: "</string>
+    <string name="ds_ui_registered_successfully">"Registered successfully"</string>
+    <string name="ds_ui_initializing">"Initializing…"</string>
+    <string
+        name="ds_ui_initialization_failed_retry_from_home"
+    >"Initialization failed · retry from Home"</string>
+    <string name="ds_ui_client_disposed">"Client disposed"</string>
+    <string name="ds_ui_not_initialized">"Not initialized"</string>
+    <string name="ds_ui_about_this_sample">"About this sample"</string>
+    <string name="ds_ui_android_11_api_30_and_newer">"Android 11 (API 30) and newer"</string>
+    <string name="ds_ui_video_calls_in_your_app">"Video calls in your app"</string>
+    <string name="ds_ui_1_add_local_modules">"1. Add the SDK"</string>
+    <string name="ds_ui_2_initialize_in_application">"2. Initialize in Application"</string>
+    <string name="ds_ui_3_display_the_call_flow">"3. Display the call flow"</string>
+    <string name="ds_ui_4_forward_incoming_push">"4. Forward incoming push"</string>
+    <string name="ds_ui_backend_setup_is_separate">"Backend setup is separate"</string>
+    <string name="ds_ui_copy_snippet">"Copy snippet"</string>
+    <string name="ds_ui_incoming_video_call">"Incoming video call"</string>
+    <string name="ds_ui_compare_with_the_caller">"Compare with the caller"</string>
+    <string name="ds_ui_unknown_device">"Unknown device"</string>
+    <string name="ds_ui_wants_to_video_call_you">"Wants to video call you"</string>
+    <string name="ds_ui_decline">"Decline"</string>
+    <string name="ds_ui_accept">"Accept"</string>
+    <string name="ds_ui_back">"Back"</string>
+    <string name="ds_ui_video_calls">"Video calls"</string>
+    <string name="ds_ui_cancel">"Cancel"</string>
+    <string name="ds_ui_reset_device_code">"Reset device code?"</string>
+    <string name="ds_ui_reset">"Reset"</string>
+    <string name="ds_ui_clear_recent_devices">"Clear recent devices?"</string>
+    <string
+        name="ds_ui_clear_recent_history_description"
+    >"This removes recent calls and saved participant names."</string>
+    <string name="ds_ui_clear">"Clear"</string>
+    <string name="ds_ui_microphone_unavailable">"Microphone unavailable"</string>
+    <string name="ds_ui_continue_without_microphone">"Continue without microphone"</string>
+    <string name="ds_ui_other_video_paused">"Other video paused"</string>
+    <string name="ds_ui_waiting_for_the_other_camera">"Waiting for the other camera…"</string>
+    <string name="ds_ui_video_paused">"Video paused"</string>
+    <string name="ds_ui_starting_camera">"Starting camera…"</string>
+    <string name="ds_ui_you">"You"</string>
+    <string name="ds_ui_connected">"Connected"</string>
+    <string name="ds_ui_reconnecting">"Reconnecting…"</string>
+    <string name="ds_ui_waiting_for_fresh_stats">"Waiting for fresh stats"</string>
+    <string name="ds_ui_hide_debug">"Hide debug"</string>
+    <string name="ds_ui_more_debug">"More debug"</string>
+    <string
+        name="ds_ui_audio_interrupted_by_another_app"
+    >"Audio interrupted by another app"</string>
+    <string
+        name="ds_ui_microphone_unavailable_receiving_audio_only"
+    >"Microphone unavailable · receiving audio only"</string>
+    <string name="ds_ui_mic_off">"Mic off"</string>
+    <string name="ds_ui_unmute">"Unmute"</string>
+    <string name="ds_ui_mute">"Mute"</string>
+    <string name="ds_ui_audio_output">"Audio output"</string>
+    <string name="ds_ui_flip_camera">"Flip camera"</string>
+    <string name="ds_ui_enable_bluetooth_routing">"Enable Bluetooth routing"</string>
+    <string name="ds_ui_done">"Done"</string>
+    <string name="ds_ui_local_video">"Local video"</string>
+    <string name="ds_ui_remote_video">"Remote video"</string>
+    <string
+        name="ds_ui_enter_a_valid_device_code_or_scan_a_direct_stream_pairing_qr"
+    >"Enter a valid device code or scan a DirectStream SDK pairing QR."</string>
+    <string
+        name="ds_ui_this_call_request_is_no_longer_available"
+    >"This call request is no longer available."</string>
+    <string name="ds_ui_enter_the_other_device_s_code">"Enter the other device\'s code."</string>
+    <string
+        name="ds_ui_unlock_the_device_to_accept_this_call"
+    >"Unlock the device to accept this call."</string>
+    <string name="ds_ui_share_device_code">"Share device code"</string>
+    <string name="ds_ui_sdk_snippet">"SDK snippet"</string>
+    <string name="ds_ui_device_code_description">"Your device code %1$s"</string>
+    <string name="ds_ui_device_options">"Options for %1$s"</string>
+    <string name="ds_ui_recent_summary">"%1$s · %2$s"</string>
+    <string name="ds_ui_incoming_direction">"↓ Incoming"</string>
+    <string name="ds_ui_outgoing_direction">"↑ Outgoing"</string>
+    <string name="ds_ui_outcome_incoming">"Incoming"</string>
+    <string name="ds_ui_outcome_calling">"Calling"</string>
+    <string name="ds_ui_outcome_accepted">"Accepted"</string>
+    <string name="ds_ui_outcome_completed">"Completed"</string>
+    <string name="ds_ui_outcome_declined">"Declined"</string>
+    <string name="ds_ui_outcome_cancelled">"Cancelled"</string>
+    <string name="ds_ui_outcome_missed">"Missed"</string>
+    <string name="ds_ui_outcome_failed">"Failed"</string>
+    <string name="ds_ui_request_countdown">"Expires in %1$d:%2$02d"</string>
+    <string name="ds_ui_qr_description">"Pairing QR for %1$s"</string>
+    <string name="ds_ui_sdk_versions">"SDK %1$s · Sample %2$s"</string>
+    <string name="ds_ui_settings_action_description">"%1$s for %2$s"</string>
+    <string name="ds_ui_configuration_missing">"Missing: %1$s"</string>
+    <string name="ds_ui_configuration_invalid">"Invalid: %1$s"</string>
+    <string name="ds_ui_services_status">"Services: %1$s"</string>
+    <string name="ds_ui_example_code" translatable="false">"ABC-234"</string>
+    <string
+        name="ds_ui_share_message"
+    >"Join my video call: webrtcstream://pair/%1$s. I will approve your request."</string>
+    <string name="ds_ui_outcome_connected">"Connected"</string>
+    <string
+        name="ds_ui_video_metrics"
+    >"%1$s: %2$s · %3$s kbps · %4$s×%5$s · %6$s FPS\nLoss %7$s · dropped %8$s"</string>
+    <string name="ds_ui_route_elapsed">"%1$s · %2$ds"</string>
+    <string name="ds_ui_compact_bitrates">"Video ↓%1$s ↑%2$s kbps\nAudio ↓%3$s ↑%4$s kbps"</string>
+    <string name="ds_ui_mic_unavailable_state">"unavailable"</string>
+    <string name="ds_ui_mic_muted_state">"muted"</string>
+    <string name="ds_ui_media_on">"on"</string>
+    <string name="ds_ui_video_paused_state">"paused"</string>
+    <string name="ds_ui_transport_metrics">"ICE %1$s · peer %2$s · RTT %3$s ms"</string>
+    <string name="ds_ui_video_in">"Video in"</string>
+    <string name="ds_ui_video_out">"Video out"</string>
+    <string
+        name="ds_ui_audio_in_metrics"
+    >"Audio in: %1$s · %2$s kbps · loss %3$s · level %4$s"</string>
+    <string name="ds_ui_audio_out_metrics">"Audio out: %1$s · %2$s kbps · loss %3$s"</string>
+    <string name="ds_ui_output_pending">"Output pending"</string>
+    <string name="ds_ui_microphone_output_metrics">"Mic %1$s · %2$s"</string>
+    <string name="ds_ui_video_pause_metrics">"Video local %1$s · remote %2$s"</string>
+    <string name="ds_ui_selected_audio_output">"✓ %1$s"</string>
+    <string
+        name="ds_ui_your_call_continues_with_audio_video_pauses_away"
+    >"Your call continues with audio. Video pauses away from the call screen."</string>
+    <string
+        name="ds_ui_recent_devices_names"
+    >"Your recent devices will appear here. Names are supplied by the other device’s host app."</string>
+    <string
+        name="ds_ui_compare_this_verification_value_camera_and_audio_start"
+    >"Compare this verification value. Camera and audio start only after acceptance."</string>
+    <string
+        name="ds_ui_not_allowed_incoming_audio_still_works_changes_apply"
+    >"Not allowed · incoming audio still works. Changes apply to the next call."</string>
+    <string
+        name="ds_ui_all_devices_can_receive_requests_you_choose_whether"
+    >"All devices can receive requests. You choose whether to accept every call."</string>
+    <string
+        name="ds_ui_stored_privately_on_this_device_clearing_history_does"
+    >"Stored privately on this device. Clearing history does not end your call or reset the device code."</string>
+    <string
+        name="ds_ui_two_way_video_and_audio_with_explicit_acceptance"
+    >"Two-way video and audio, with explicit acceptance for every call."</string>
+    <string
+        name="ds_ui_configuration_is_supplied_by_the_host_app_local"
+    >"Configuration is supplied by the host app. Local validation does not check service reachability or guarantee call connectivity."</string>
+    <string
+        name="ds_ui_default_provider_firebase_spark_and_cloudflare_workers_free"
+    >"Default provider: Firebase Spark and Cloudflare Workers Free. Developers configure their own projects; custom providers can use other infrastructure."</string>
+    <string
+        name="ds_ui_turn_is_disabled_by_default_restrictive_networks_may"
+    >"TURN is disabled by default. Restrictive networks may prevent direct calls. Free-service quotas and Android notification policies can interrupt availability."</string>
+    <string
+        name="ds_ui_names_do_not_verify_identity"
+    >"Display names do not verify identity. Device codes locate clients; accepting a request authorizes the call."</string>
+    <string
+        name="ds_ui_use_the_ready_made_compose_flow_or_observe"
+    >"Use the ready-made Compose flow or observe typed state and send commands from your own interface. Install DirectStream 1.0.0 from Maven Central; one starter dependency includes the runtime, Compose UI and Firebase provider."</string>
+    <string
+        name="ds_ui_include_the_sdk_modules_and_their_implementation_dependencies"
+    >"Include the SDK modules and their implementation dependencies from this repository."</string>
+    <string
+        name="ds_ui_provide_your_public_firebase_client_configuration_and_https"
+    >"Provide your public Firebase client configuration and HTTPS Worker URL. Never include server credentials in Android code."</string>
+    <string
+        name="ds_ui_use_your_materialtheme_forward_activity_visibility_with_client"
+    >"Use your MaterialTheme. Forward activity visibility with client.setVisible(true/false); do not dispose on rotation or backgrounding."</string>
+    <string
+        name="ds_ui_the_host_owns_push_delivery_the_optional_helper"
+    >"The host forwards push delivery. The SDK validates each request before showing an alert; accepting still requires the call UI and permissions."</string>
+    <string
+        name="ds_ui_for_the_default_provider_enable_firebase_anonymous_authentication"
+    >"For the default provider, enable Firebase anonymous authentication, publish the supplied RTDB rules and deploy the Worker. Put the Google service-account key only in Worker secrets."</string>
+    <string
+        name="ds_ui_see_sdk_md_and_readme_md_in_this"
+    >"See README.md and the docs directory in this repository for the complete manifest, lifecycle, permission, custom-provider and teardown examples."</string>
+    <string
+        name="ds_ui_only_accept_if_you_expected_this_call_a"
+    >"Only accept if you expected this call. A display name does not verify identity."</string>
+    <string
+        name="ds_ui_camera_and_microphone_start_after_you_accept_unlocking"
+    >"Camera and microphone start after you accept. Unlocking may be required."</string>
+    <string
+        name="ds_ui_the_old_code_and_pending_requests_stop_working"
+    >"The old code and pending requests stop working. An active call continues."</string>
+    <string
+        name="ds_ui_continue_without_sending_audio_you_can_still_hear"
+    >"Continue without sending audio? You can still hear the other participant. Microphone permission takes effect on your next call."</string>
+    <string
+        name="ds_ui_camera_access_is_required_on_android_17_also"
+    >"Camera access is required. On Android 17, also allow Nearby devices / local network access."</string>
+    <string
+        name="ds_ui_notifications_are_disabled_open_the_app_to_check"
+    >"Notifications are disabled. Open the app to check incoming calls; ongoing-call controls may not appear in the notification drawer."</string>
+    <string name="ds_ui_call_duration">%1$d:%2$02d</string>
+    <string name="ds_ui_call_diagnostics">Call diagnostics</string>
+    <string name="ds_ui_current_audio_output">Audio output: %1$s</string>
+    <string name="ds_ui_regenerate_code">Regenerate code</string>
+    <string name="ds_ui_regenerate_device_code_title">Regenerate device code?</string>
+    <string
+        name="ds_ui_regenerate_code_hint"
+    >Revoke your current code and create a new one. Share the new code or QR to receive future calls.</string>
+    <string
+        name="ds_ui_regenerate_code_confirmation"
+    >Your old code, QR and pairing link will stop accepting new requests. Pending incoming requests will be cancelled. An already approved call will continue.</string>
+    <string name="ds_ui_install_guide_intro_title">"Installation and user integration"</string>
+    <string
+        name="ds_ui_install_guide_intro_body"
+    >"Initialize one process client in Application. Retrieve it later with DirectStreamClient.current(); this is the calls instance used in the examples. Your app owns login, its user/device database and recipient selection. The SDK owns call UI and media."</string>
+    <string name="ds_ui_install_dependencies_title">"1. Add the starter dependency"</string>
+    <string
+        name="ds_ui_install_dependencies_body"
+    >"Use io.github.orthoepiccrown0:directstream:1.0.0 from Maven Central. The showcase consumes the same published SDK. Hilt is a host choice and is not required by the SDK."</string>
+    <string name="ds_ui_install_initialize_title">"2. Initialize in Application"</string>
+    <string
+        name="ds_ui_install_initialize_body"
+    >"Initialize before login with participantName = null and your configured provider. Retrieve the same client using DirectStreamClient.current(), or inject it into your UI and messaging service. Initialize even on a push-only process start."</string>
+    <string name="ds_ui_install_register_title">"3. Activate after login"</string>
+    <string
+        name="ds_ui_install_register_body"
+    >"Initialization does not register or start media. After login, call activate(participantName = displayName), handle CallResult and observe registration.device. Update a profile name with updateParticipantName; null clears only the label. Deactivate on logout to clear the stored name and revoke registration. The host separately removes its own user/device mapping."</string>
+    <string name="ds_ui_install_mapping_title">"4. Link devices to your users"</string>
+    <string
+        name="ds_ui_install_mapping_body"
+    >"Store the code with your authenticated user and stable installation ID in your own database. Support multiple devices per user and sync changed codes. The host server must verify ownership; a client-supplied code alone is not proof. Run the collector in the signed-in user scope."</string>
+    <string name="ds_ui_install_request_title">"5. Call a selected user device"</string>
+    <string
+        name="ds_ui_install_request_body"
+    >"Resolve the recipient through your authenticated directory and let the user select an available device. Every call still needs the recipient’s approval. The bundled provider supports one receiver at a time, not user-level ringing on all devices."</string>
+    <string name="ds_ui_install_call_ui_title">"6. Display the call experience"</string>
+    <string
+        name="ds_ui_install_call_ui_body"
+    >"Wrap your navigation in DirectStreamHost. It owns permission preflight, lifecycle and incoming, waiting and in-call presentation. Your app supplies contacts and callbacks. Every call still requires acceptance."</string>
+    <string name="ds_ui_install_lifecycle_title">"7. Forward push messages and tokens"</string>
+    <string
+        name="ds_ui_install_lifecycle_body"
+    >"Forward incoming messages, the existing startup FCM token and token changes through handlePush and updatePushToken. Typed results distinguish unrelated, stale and retryable work. Incoming calls are core. Full-screen access depends on host declarations and platform policy. The Compose host binds lifecycle; background audio continues while video pauses."</string>
+    <string name="ds_ui_install_regenerate_title">"8. Regenerate and sync the code"</string>
+    <string
+        name="ds_ui_install_regenerate_body"
+    >"Confirm before regeneration. The provider revokes the previous code and pending incoming requests while preserving approved calls. Update your user/device directory with the new value. Remove old account bindings and revoke the code when changing the device’s signed-in user."</string>
+    <string name="ds_ui_install_showcase_title">"Showcase tools only"</string>
+    <string
+        name="ds_ui_install_showcase_body"
+    >"QR codes, scanner entry, pairing links and the sample Home screen are showcase tools. Host-assigned participant names are SDK metadata and can change after login. Your product owns its authenticated user/device directory and recipient selection."</string>
+    <string name="ds_ui_install_ownership_title">"Your database stays yours"</string>
+    <string
+        name="ds_ui_install_ownership_body"
+    >"A named Firebase app maintains the SDK installation identity separately from the host Firebase Auth user. Your application owns user authentication and its user/device directory. The SDK exposes registration changes and a short-lived ownership proof for backend verification; it does not bind business accounts automatically."</string>
+    <string name="ds_ui_install_backend_title">"Configure the serverless provider"</string>
+    <string
+        name="ds_ui_install_backend_body"
+    >"Deploy the v1 Worker with its D1 coordination database and participant-restricted Firebase rules. For a fresh setup, create the D1 schema and ready marker before enabling requests; see README.md. Public Firebase configuration and Worker URL are host-owned. Incoming calls are core; push messages and token changes are always forwarded by the host. Configure customer-owned TURN for production connectivity; the free demo remains direct-only until configured. Server credentials stay outside Android code."</string>
+    <string
+        name="ds_ui_install_dependencies_code"
+        translatable="false"
+    >"implementation(\"io.github.orthoepiccrown0:directstream:1.0.0\")\n// Incoming calls and default Compose UI are included."</string>
+    <string
+        name="ds_ui_install_initialize_code"
+        translatable="false"
+    >"class MyApplication : Application() {\n    override fun onCreate() {\n        super.onCreate()\n        DirectStreamClient.initialize(\n            this,\n            DirectStreamConfiguration(\n                provider = configuredProvider,\n                participantName = null,\n                returnActivity = MainActivity::class.java\n            )\n        )\n    }\n}\n// configuredProvider uses your host-owned Firebase/Worker configuration.\n// See README Quick start for the complete provider example."</string>
+    <string
+        name="ds_ui_install_register_code"
+        translatable="false"
+    >"val calls = DirectStreamClient.current()\n// Run in a host-owned coroutine after login:\nwhen (val result = calls.activate(participantName = currentUser.displayName)) {\n    CallResult.Success -&gt; Unit // Observe calls.registration for the code.\n    is CallResult.Failure -&gt; showError(result.error)\n}\n// Profile edit: calls.updateParticipantName(newDisplayName)\n// Logout: await calls.deactivate(); remove your backend user/device binding.\n// Handle each result; offline revocation remains cleanup pending."</string>
+    <string
+        name="ds_ui_install_mapping_code"
+        translatable="false"
+    >"val calls = DirectStreamClient.current()\ncalls.registration.collectLatest { registration -&gt;\n    registration.device?.let { device -&gt;\n        val proof = calls.ownershipProof()\n        // Host backend verifies proof and SDK code ownership.\n        // Then bind device.code to the signed-in user.\n    }\n}\n// Re-sync after regeneration. Never log proof credentials."</string>
+    <string
+        name="ds_ui_install_request_code"
+        translatable="false"
+    >"// Inside DirectStreamHost(client = calls) { callUi -&gt; ... }:\nContactsScreen(onCall = { code -&gt;\n    callUi.startCall(code, CallMode.Video)\n}, onAudioCall = { code -&gt;\n    callUi.startCall(code, CallMode.Audio)\n})\n// callUi performs permission/unlock preflight; calls is the client."</string>
+    <string
+        name="ds_ui_install_call_ui_code"
+        translatable="false"
+    >"val calls = DirectStreamClient.current()\nMaterialTheme {\n    DirectStreamHost(client = calls) { callUi -&gt;\n        ContactsScreen(onCall = { deviceCode -&gt;\n            callUi.startCall(deviceCode, CallMode.Video)\n        })\n    }\n}\n// Use callContent for custom screens.\n// Your app owns its ordinary navigation."</string>
+    <string
+        name="ds_ui_install_lifecycle_code"
+        translatable="false"
+    >"val calls = DirectStreamClient.current()\n// At startup/sign-in, forward the existing token too:\ncalls.updatePushToken(FirebaseMessaging.getInstance().token.await())\n// Forward from your own FirebaseMessagingService:\n// Coroutine scope appropriate to the service callback:\ncalls.updatePushToken(token)\ncalls.handlePush(message.data)\n// The SDK declares no FirebaseMessagingService.\n// DirectStreamHost owns lifecycle and notification routing.\n// Never approve a call from a push payload."</string>
+    <string
+        name="ds_ui_install_regenerate_code"
+        translatable="false"
+    >"val calls = DirectStreamClient.current()\nwhen (val result = calls.regenerateCode()) {\n    CallResult.Success -&gt; {\n        // The state collector re-syncs the replacement code.\n        // Old code is revoked; pending incoming requests cancel.\n        // Already approved calls continue.\n    }\n    is CallResult.Failure -&gt; showError(result.error)\n}"</string>
+    <string name="ds_ui_screen_gallery">Screen gallery</string>
+    <string
+        name="ds_ui_gallery_explanation"
+    >Explore every sample screen without a second device. Examples use synthetic data and never start a call, camera, microphone or network request. Call controls are simulated.</string>
+    <string name="ds_ui_gallery_example_label">Example · %1$s · No live call</string>
+    <string name="ds_ui_gallery_home">Home and recent calls</string>
+    <string
+        name="ds_ui_gallery_home_description"
+    >Device code, QR, recent attempts and host-assigned names.</string>
+    <string
+        name="ds_ui_gallery_entry_description"
+    >Manual code entry. Real scanning is available from Home → Call a device.</string>
+    <string name="ds_ui_gallery_waiting">Waiting for approval</string>
+    <string
+        name="ds_ui_gallery_waiting_description"
+    >Verification value, request expiry and cancellation.</string>
+    <string name="ds_ui_gallery_incoming">Incoming call</string>
+    <string
+        name="ds_ui_gallery_incoming_description"
+    >Caller identity, verification and explicit acceptance.</string>
+    <string name="ds_ui_gallery_call">Connected call</string>
+    <string
+        name="ds_ui_gallery_call_description"
+    >Video layout, mute, audio routing and expandable diagnostics.</string>
+    <string name="ds_ui_gallery_reconnecting">Reconnecting call</string>
+    <string
+        name="ds_ui_gallery_reconnecting_description"
+    >Call presentation while connectivity recovers.</string>
+    <string name="ds_ui_gallery_paused">Remote video paused</string>
+    <string
+        name="ds_ui_gallery_paused_description"
+    >Audio-only presentation while the other camera is paused.</string>
+    <string name="ds_ui_gallery_microphone">Microphone denied</string>
+    <string
+        name="ds_ui_gallery_microphone_description"
+    >Receive-only audio with microphone controls disabled.</string>
+    <string
+        name="ds_ui_gallery_settings_description"
+    >SDK overview, permissions, setup status and sample data.</string>
+    <string name="ds_ui_gallery_missing_setup">Missing configuration</string>
+    <string
+        name="ds_ui_gallery_missing_description"
+    >Settings before a provider is configured.</string>
+    <string
+        name="ds_ui_gallery_integration_description"
+    >Host initialization, device mapping and ready-made call UI.</string>
+    <string name="ds_ui_gallery_local_video">Local preview</string>
+    <string name="ds_ui_gallery_remote_video">Sample remote video</string>
+    <string name="ds_ui_media_codecs">Media codecs</string>
+    <string
+        name="ds_ui_codecs_next_call"
+    >Applies to the next call. Changes never alter the current or pending call.</string>
+    <string
+        name="ds_ui_codecs_peer_unknown"
+    >Peer compatibility is unknown until the next approved call.</string>
+    <string name="ds_ui_codecs_loading">Checking local codec capabilities…</string>
+    <string name="ds_ui_codecs_discovery_failed">Local codec discovery is unavailable.</string>
+    <string name="ds_ui_video_codec">Video codec</string>
+    <string name="ds_ui_audio_codec">Audio codec</string>
+    <string name="ds_ui_codec_auto">Auto</string>
+    <string
+        name="ds_ui_codec_auto_description"
+    >Choose a mutually compatible codec, prioritizing hardware support.</string>
+    <string name="ds_ui_codec_enforce">Enforce selected codec</string>
+    <string
+        name="ds_ui_codec_enforce_description"
+    >Reject incompatible calls instead of using a different codec.</string>
+    <string name="ds_ui_codec_not_bundled">Not exposed by the bundled WebRTC engine.</string>
+    <string name="ds_ui_codec_unavailable">Unavailable</string>
+    <string name="ds_ui_codec_hardware">Hardware available</string>
+    <string name="ds_ui_codec_software">Software available</string>
+    <string name="ds_ui_codec_implementation_unknown">Available · implementation unknown</string>
+    <string name="ds_ui_codec_availability">Encode: %1$s · Decode: %2$s</string>
+    <string name="ds_ui_close">Close</string>
+    <string name="ds_ui_codec_enforce_for">Enforce %1$s</string>
+    <string name="ds_ui_audio_call">Audio call</string>
+    <string name="ds_ui_video_call">Video call</string>
+    <string
+        name="ds_ui_existing_service_video_audio"
+    >Video calls include two-way audio. Audio-only calls require newer service support.</string>
+    <string name="ds_ui_debug_device_code">Debug device code: %1$s</string>
+    <string name="ds_ui_participant_name">Your demo name: %1$s</string>
+    <string
+        name="ds_ui_incoming_channel_silent"
+    >Incoming channel is silent or low priority · the screen may not wake. Check channel settings.</string>
+    <string name="ds_ui_incoming_alert_setup">Incoming call alerts need attention</string>
+    <string
+        name="ds_ui_enable_full_screen_for_wake"
+    >Allow full-screen call alerts to show the incoming screen when your phone is locked. Android controls presentation; unlocked phones normally show a call banner.</string>
+    <string name="ds_ui_configure_call_alerts">Configure call alerts</string>
+</resources>

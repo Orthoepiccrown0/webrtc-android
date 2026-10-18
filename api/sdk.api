@@ -1,0 +1,170 @@
+public final class com.epiccrown.directstream.CallEvent$CodecChanged implements com.epiccrown.directstream.CallEvent {
+  public com.epiccrown.directstream.CallEvent$CodecChanged(com.epiccrown.directstream.api.CallCodecState);
+  public final com.epiccrown.directstream.api.CallCodecState getState();
+  public final com.epiccrown.directstream.api.CallCodecState component1();
+  public final com.epiccrown.directstream.CallEvent$CodecChanged copy(com.epiccrown.directstream.api.CallCodecState);
+  public static com.epiccrown.directstream.CallEvent$CodecChanged copy$default(com.epiccrown.directstream.CallEvent$CodecChanged, com.epiccrown.directstream.api.CallCodecState, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.CallEvent$Failed implements com.epiccrown.directstream.CallEvent {
+  public com.epiccrown.directstream.CallEvent$Failed(com.epiccrown.directstream.api.CallFailure);
+  public final com.epiccrown.directstream.api.CallFailure getError();
+  public final com.epiccrown.directstream.api.CallFailure component1();
+  public final com.epiccrown.directstream.CallEvent$Failed copy(com.epiccrown.directstream.api.CallFailure);
+  public static com.epiccrown.directstream.CallEvent$Failed copy$default(com.epiccrown.directstream.CallEvent$Failed, com.epiccrown.directstream.api.CallFailure, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.CallEvent$Outcome implements com.epiccrown.directstream.CallEvent {
+  public com.epiccrown.directstream.CallEvent$Outcome(com.epiccrown.directstream.api.CallAttempt);
+  public final com.epiccrown.directstream.api.CallAttempt getAttempt();
+  public final com.epiccrown.directstream.api.CallAttempt component1();
+  public final com.epiccrown.directstream.CallEvent$Outcome copy(com.epiccrown.directstream.api.CallAttempt);
+  public static com.epiccrown.directstream.CallEvent$Outcome copy$default(com.epiccrown.directstream.CallEvent$Outcome, com.epiccrown.directstream.api.CallAttempt, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.CallEvent$SessionChanged implements com.epiccrown.directstream.CallEvent {
+  public com.epiccrown.directstream.CallEvent$SessionChanged(com.epiccrown.directstream.api.StreamSessionState);
+  public final com.epiccrown.directstream.api.StreamSessionState getSession();
+  public final com.epiccrown.directstream.api.StreamSessionState component1();
+  public final com.epiccrown.directstream.CallEvent$SessionChanged copy(com.epiccrown.directstream.api.StreamSessionState);
+  public static com.epiccrown.directstream.CallEvent$SessionChanged copy$default(com.epiccrown.directstream.CallEvent$SessionChanged, com.epiccrown.directstream.api.StreamSessionState, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public interface com.epiccrown.directstream.CallEvent {
+}
+public final class com.epiccrown.directstream.CallResult$Failure implements com.epiccrown.directstream.CallResult {
+  public com.epiccrown.directstream.CallResult$Failure(com.epiccrown.directstream.api.CallFailure);
+  public final com.epiccrown.directstream.api.CallFailure getError();
+  public final com.epiccrown.directstream.api.CallFailure component1();
+  public final com.epiccrown.directstream.CallResult$Failure copy(com.epiccrown.directstream.api.CallFailure);
+  public static com.epiccrown.directstream.CallResult$Failure copy$default(com.epiccrown.directstream.CallResult$Failure, com.epiccrown.directstream.api.CallFailure, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.CallResult$Success implements com.epiccrown.directstream.CallResult {
+  public static final com.epiccrown.directstream.CallResult$Success INSTANCE;
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public interface com.epiccrown.directstream.CallResult {
+}
+public final class com.epiccrown.directstream.DirectStreamClient$Companion {
+  public final synchronized com.epiccrown.directstream.DirectStreamClient initialize(android.content.Context, com.epiccrown.directstream.DirectStreamConfiguration);
+  public final com.epiccrown.directstream.DirectStreamClient currentOrNull();
+  public final com.epiccrown.directstream.DirectStreamClient current();
+  public com.epiccrown.directstream.DirectStreamClient$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.DirectStreamClient {
+  public static final com.epiccrown.directstream.DirectStreamClient$Companion Companion;
+  public final com.epiccrown.directstream.DirectStreamConfiguration getConfiguration();
+  public final kotlinx.coroutines.flow.StateFlow<com.epiccrown.directstream.api.CallSnapshot> getState();
+  public final kotlinx.coroutines.flow.StateFlow<com.epiccrown.directstream.api.CallCodecState> getCodecs();
+  public final com.epiccrown.directstream.api.CallVideoRenderer getVideo();
+  public final kotlinx.coroutines.flow.StateFlow<com.epiccrown.directstream.SetupStatus> getSetup();
+  public final kotlinx.coroutines.flow.SharedFlow<com.epiccrown.directstream.CallEvent> getEvents();
+  public final kotlinx.coroutines.flow.StateFlow<com.epiccrown.directstream.api.RegistrationState> getRegistration();
+  public final kotlinx.coroutines.flow.StateFlow<com.epiccrown.directstream.api.CallState> getCallState();
+  public final kotlinx.coroutines.flow.StateFlow<com.epiccrown.directstream.api.CallMediaState> getMedia();
+  public final kotlinx.coroutines.flow.StateFlow<com.epiccrown.directstream.api.StreamStats> getDiagnostics();
+  public final boolean isActivated();
+  public final java.lang.Object activate(kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object activate(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object updateParticipantName(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object deactivate(kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object startCall(java.lang.String, com.epiccrown.directstream.api.CallMode, boolean, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public static java.lang.Object startCall$default(com.epiccrown.directstream.DirectStreamClient, java.lang.String, com.epiccrown.directstream.api.CallMode, boolean, kotlin.coroutines.Continuation, int, java.lang.Object);
+  public final java.lang.Object accept(java.lang.String, boolean, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public static java.lang.Object accept$default(com.epiccrown.directstream.DirectStreamClient, java.lang.String, boolean, kotlin.coroutines.Continuation, int, java.lang.Object);
+  public final java.lang.Object decline(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object cancel(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object hangup(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object dismissOutcome(kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object ownershipProof(kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.ValueResult<com.epiccrown.directstream.api.DeviceOwnershipProof>>);
+  public final java.lang.Object reviewIncoming(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object refreshAudioOutputs(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object setMuted(java.lang.String, boolean, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object selectAudioOutput(java.lang.String, int, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object flipCamera(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object setNextCallCodecs(com.epiccrown.directstream.api.CallCodecPreferences, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object switchCodecs(java.lang.String, com.epiccrown.directstream.api.CallCodecPreferences, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object updatePushToken(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.PushTokenResult>);
+  public final java.lang.Object handlePush(java.util.Map<java.lang.String, java.lang.String>, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.PushHandlingResult>);
+  public final java.lang.Object execute(com.epiccrown.directstream.CallCommand, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object regenerateCode(kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final void setVisible(boolean);
+  public final void setCallScreenVisible(boolean);
+  public final void configureMicrophone(boolean);
+  public final java.lang.Object refreshPushToken(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.CallResult>);
+  public final java.lang.Object validateIncoming(java.lang.String, kotlin.coroutines.Continuation<? super com.epiccrown.directstream.api.PairingRequest>);
+  public final android.content.Intent returnIntent();
+  public final java.lang.Object dispose(kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  public com.epiccrown.directstream.DirectStreamClient(android.content.Context, com.epiccrown.directstream.DirectStreamConfiguration, kotlin.jvm.internal.DefaultConstructorMarker);
+}
+public final class com.epiccrown.directstream.DirectStreamConfiguration {
+  public com.epiccrown.directstream.DirectStreamConfiguration(com.epiccrown.directstream.api.CallProvider, java.lang.String, boolean, com.epiccrown.directstream.api.RelayProvider, int, java.lang.Class<? extends android.app.Activity>, com.epiccrown.directstream.api.CallCodecPreferences, java.lang.String, boolean);
+  public com.epiccrown.directstream.DirectStreamConfiguration(com.epiccrown.directstream.api.CallProvider, java.lang.String, boolean, com.epiccrown.directstream.api.RelayProvider, int, java.lang.Class, com.epiccrown.directstream.api.CallCodecPreferences, java.lang.String, boolean, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.epiccrown.directstream.api.CallProvider getProvider();
+  public final java.lang.String getAppName();
+  public final boolean getForceRelay();
+  public final com.epiccrown.directstream.api.RelayProvider getRelayProvider();
+  public final int getNotificationIcon();
+  public final java.lang.Class<? extends android.app.Activity> getReturnActivity();
+  public final com.epiccrown.directstream.api.CallCodecPreferences getCodecPreferences();
+  public final java.lang.String getParticipantName();
+  public final boolean getShowDebugIdentifiers();
+  public final com.epiccrown.directstream.api.CallProvider component1();
+  public final java.lang.String component2();
+  public final boolean component3();
+  public final com.epiccrown.directstream.api.RelayProvider component4();
+  public final int component5();
+  public final java.lang.Class<? extends android.app.Activity> component6();
+  public final com.epiccrown.directstream.api.CallCodecPreferences component7();
+  public final java.lang.String component8();
+  public final boolean component9();
+  public final com.epiccrown.directstream.DirectStreamConfiguration copy(com.epiccrown.directstream.api.CallProvider, java.lang.String, boolean, com.epiccrown.directstream.api.RelayProvider, int, java.lang.Class<? extends android.app.Activity>, com.epiccrown.directstream.api.CallCodecPreferences, java.lang.String, boolean);
+  public static com.epiccrown.directstream.DirectStreamConfiguration copy$default(com.epiccrown.directstream.DirectStreamConfiguration, com.epiccrown.directstream.api.CallProvider, java.lang.String, boolean, com.epiccrown.directstream.api.RelayProvider, int, java.lang.Class, com.epiccrown.directstream.api.CallCodecPreferences, java.lang.String, boolean, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+public final class com.epiccrown.directstream.InitializationStatus extends java.lang.Enum<com.epiccrown.directstream.InitializationStatus> {
+  public static final com.epiccrown.directstream.InitializationStatus NOT_INITIALIZED;
+  public static final com.epiccrown.directstream.InitializationStatus INITIALIZING;
+  public static final com.epiccrown.directstream.InitializationStatus READY;
+  public static final com.epiccrown.directstream.InitializationStatus FAILED;
+  public static final com.epiccrown.directstream.InitializationStatus DISPOSED;
+  public static com.epiccrown.directstream.InitializationStatus[] values();
+  public static com.epiccrown.directstream.InitializationStatus valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.epiccrown.directstream.InitializationStatus> getEntries();
+}
+public final class com.epiccrown.directstream.SetupStatus {
+  public com.epiccrown.directstream.SetupStatus(java.lang.String, com.epiccrown.directstream.api.ConfigurationCheck, com.epiccrown.directstream.InitializationStatus, com.epiccrown.directstream.api.RelayReadiness, com.epiccrown.directstream.api.PushReadiness, boolean);
+  public com.epiccrown.directstream.SetupStatus(java.lang.String, com.epiccrown.directstream.api.ConfigurationCheck, com.epiccrown.directstream.InitializationStatus, com.epiccrown.directstream.api.RelayReadiness, com.epiccrown.directstream.api.PushReadiness, boolean, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.lang.String getProvider();
+  public final com.epiccrown.directstream.api.ConfigurationCheck getConfiguration();
+  public final com.epiccrown.directstream.InitializationStatus getInitialization();
+  public final com.epiccrown.directstream.api.RelayReadiness getRelay();
+  public final com.epiccrown.directstream.api.PushReadiness getPush();
+  public final boolean getRemoteCleanupPending();
+  public final java.lang.String component1();
+  public final com.epiccrown.directstream.api.ConfigurationCheck component2();
+  public final com.epiccrown.directstream.InitializationStatus component3();
+  public final com.epiccrown.directstream.api.RelayReadiness component4();
+  public final com.epiccrown.directstream.api.PushReadiness component5();
+  public final boolean component6();
+  public final com.epiccrown.directstream.SetupStatus copy(java.lang.String, com.epiccrown.directstream.api.ConfigurationCheck, com.epiccrown.directstream.InitializationStatus, com.epiccrown.directstream.api.RelayReadiness, com.epiccrown.directstream.api.PushReadiness, boolean);
+  public static com.epiccrown.directstream.SetupStatus copy$default(com.epiccrown.directstream.SetupStatus, java.lang.String, com.epiccrown.directstream.api.ConfigurationCheck, com.epiccrown.directstream.InitializationStatus, com.epiccrown.directstream.api.RelayReadiness, com.epiccrown.directstream.api.PushReadiness, boolean, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}

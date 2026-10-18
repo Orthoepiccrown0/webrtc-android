@@ -1,0 +1,153 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "control": {
+      ".read": false,
+      ".write": false,
+      "events": {
+        "$uid": {
+          ".read": "auth != null && auth.uid == $uid",
+          ".write": false
+        }
+      }
+    },
+    "rooms": {
+      "$roomId": {
+        ".read": "auth != null && root.child('control/sessions').child($roomId).child('status').val() == 'active' && root.child('control/sessions').child($roomId).child('expiresAt').val() > now && (root.child('control/sessions').child($roomId).child('hostUid').val() == auth.uid || root.child('control/sessions').child($roomId).child('guestUid').val() == auth.uid)",
+        "metadata": {
+          ".write": false
+        },
+        "signaling": {
+          "offer": {
+            ".write": "auth != null && root.child('control/sessions').child($roomId).child('status').val() == 'active' && root.child('control/sessions').child($roomId).child('expiresAt').val() > now && root.child('control/sessions').child($roomId).child('hostUid').val() == auth.uid",
+            ".validate": "newData.hasChildren(['type', 'sdp'])",
+            "type": {
+              ".validate": "newData.val() == 'offer'"
+            },
+            "sdp": {
+              ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 65536"
+            },
+            "$other": {
+              ".validate": false
+            },
+            "negotiationId": {
+              ".validate": "newData.isString() && newData.val().matches(/^[A-Za-z0-9_-]{16,64}$/)"
+            }
+          },
+          "answer": {
+            ".write": "auth != null && root.child('control/sessions').child($roomId).child('status').val() == 'active' && root.child('control/sessions').child($roomId).child('expiresAt').val() > now && root.child('control/sessions').child($roomId).child('guestUid').val() == auth.uid",
+            ".validate": "newData.hasChildren(['type', 'sdp'])",
+            "type": {
+              ".validate": "newData.val() == 'answer'"
+            },
+            "sdp": {
+              ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 65536"
+            },
+            "$other": {
+              ".validate": false
+            },
+            "negotiationId": {
+              ".validate": "newData.isString() && newData.val().matches(/^[A-Za-z0-9_-]{16,64}$/)"
+            }
+          },
+          "$other": {
+            ".validate": false
+          },
+          "codecs": {
+            "host": {
+              "$messageId": {
+                ".write": "auth != null && root.child('control/sessions').child($roomId).child('status').val() == 'active' && root.child('control/sessions').child($roomId).child('expiresAt').val() > now && root.child('control/sessions').child($roomId).child('hostUid').val() == auth.uid",
+                ".validate": "$messageId.matches(/^[A-Za-z0-9_-]{16,96}$/) && newData.hasChildren(['version', 'payload'])",
+                "version": {
+                  ".validate": "newData.isNumber() && newData.val() == 1"
+                },
+                "payload": {
+                  ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 32768"
+                },
+                "$other": {
+                  ".validate": false
+                }
+              }
+            },
+            "guest": {
+              "$messageId": {
+                ".write": "auth != null && root.child('control/sessions').child($roomId).child('status').val() == 'active' && root.child('control/sessions').child($roomId).child('expiresAt').val() > now && root.child('control/sessions').child($roomId).child('guestUid').val() == auth.uid",
+                ".validate": "$messageId.matches(/^[A-Za-z0-9_-]{16,96}$/) && newData.hasChildren(['version', 'payload'])",
+                "version": {
+                  ".validate": "newData.isNumber() && newData.val() == 1"
+                },
+                "payload": {
+                  ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 32768"
+                },
+                "$other": {
+                  ".validate": false
+                }
+              }
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "candidates": {
+          "host": {
+            "$candidateId": {
+              ".write": "auth != null && root.child('control/sessions').child($roomId).child('status').val() == 'active' && root.child('control/sessions').child($roomId).child('expiresAt').val() > now && root.child('control/sessions').child($roomId).child('hostUid').val() == auth.uid",
+              ".validate": "newData.hasChildren(['sdpMLineIndex', 'candidate'])",
+              "sdpMid": {
+                ".validate": "newData.isString() && newData.val().length <= 256"
+              },
+              "sdpMLineIndex": {
+                ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 32"
+              },
+              "candidate": {
+                ".validate": "newData.isString() && newData.val().length <= 4096"
+              },
+              "$other": {
+                ".validate": false
+              }
+            }
+          },
+          "guest": {
+            "$candidateId": {
+              ".write": "auth != null && root.child('control/sessions').child($roomId).child('status').val() == 'active' && root.child('control/sessions').child($roomId).child('expiresAt').val() > now && root.child('control/sessions').child($roomId).child('guestUid').val() == auth.uid",
+              ".validate": "newData.hasChildren(['sdpMLineIndex', 'candidate'])",
+              "sdpMid": {
+                ".validate": "newData.isString() && newData.val().length <= 256"
+              },
+              "sdpMLineIndex": {
+                ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 32"
+              },
+              "candidate": {
+                ".validate": "newData.isString() && newData.val().length <= 4096"
+              },
+              "$other": {
+                ".validate": false
+              }
+            }
+          },
+          "$other": {
+            ".validate": false
+          }
+        },
+        "presence": {
+          "host": {
+            ".write": "auth != null && root.child('control/sessions').child($roomId).child('status').val() == 'active' && root.child('control/sessions').child($roomId).child('expiresAt').val() > now && root.child('control/sessions').child($roomId).child('hostUid').val() == auth.uid",
+            ".validate": "newData.isBoolean()"
+          },
+          "guest": {
+            ".write": "auth != null && root.child('control/sessions').child($roomId).child('status').val() == 'active' && root.child('control/sessions').child($roomId).child('expiresAt').val() > now && root.child('control/sessions').child($roomId).child('guestUid').val() == auth.uid",
+            ".validate": "newData.isBoolean()"
+          },
+          "$other": {
+            ".validate": false
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}

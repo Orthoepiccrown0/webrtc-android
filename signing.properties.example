@@ -1,0 +1,6 @@
+# Copy to signing.properties; never commit the populated file or keystore.
+# Paths are relative to the repository root, or absolute.
+storeFile=signing/directstream-release.p12
+storePassword=REPLACE_WITH_YOUR_KEYSTORE_PASSWORD
+keyAlias=directstream-release
+keyPassword=REPLACE_WITH_YOUR_KEY_PASSWORD

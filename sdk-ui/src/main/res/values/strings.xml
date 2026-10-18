@@ -1,0 +1,148 @@
+<resources>
+    <string name="ds_ui_connecting">"Connecting…"</string>
+    <string name="ds_ui_end_call">"End call"</string>
+    <string name="ds_ui_calling">"Calling…"</string>
+    <string
+        name="ds_ui_waiting_for_the_other_device_to_accept"
+    >"Waiting for the other device to accept"</string>
+    <string name="ds_ui_cancel_request">"Cancel request"</string>
+    <string name="ds_ui_incoming_video_call">"Incoming video call"</string>
+    <string name="ds_ui_compare_with_the_caller">"Compare with the caller"</string>
+    <string name="ds_ui_unknown_device">"Unknown device"</string>
+    <string name="ds_ui_wants_to_video_call_you">"Wants to video call you"</string>
+    <string name="ds_ui_decline">"Decline"</string>
+    <string name="ds_ui_accept">"Accept"</string>
+    <string name="ds_ui_back">"Back"</string>
+    <string name="ds_ui_video_calls">"Video calls"</string>
+    <string name="ds_ui_other_video_paused">"Other video paused"</string>
+    <string name="ds_ui_waiting_for_the_other_camera">"Waiting for the other camera…"</string>
+    <string name="ds_ui_video_paused">"Video paused"</string>
+    <string name="ds_ui_starting_camera">"Starting camera…"</string>
+    <string name="ds_ui_you">"You"</string>
+    <string name="ds_ui_connected">"Connected"</string>
+    <string name="ds_ui_reconnecting">"Reconnecting…"</string>
+    <string name="ds_ui_waiting_for_fresh_stats">"Waiting for fresh stats"</string>
+    <string name="ds_ui_hide_debug">"Hide debug"</string>
+    <string name="ds_ui_more_debug">"More debug"</string>
+    <string
+        name="ds_ui_audio_interrupted_by_another_app"
+    >"Audio interrupted by another app"</string>
+    <string
+        name="ds_ui_microphone_unavailable_receiving_audio_only"
+    >"Microphone unavailable · receiving audio only"</string>
+    <string name="ds_ui_mic_off">"Mic off"</string>
+    <string name="ds_ui_unmute">"Unmute"</string>
+    <string name="ds_ui_mute">"Mute"</string>
+    <string name="ds_ui_audio_output">"Audio output"</string>
+    <string name="ds_ui_flip_camera">"Flip camera"</string>
+    <string name="ds_ui_enable_bluetooth_routing">"Enable Bluetooth routing"</string>
+    <string name="ds_ui_done">"Done"</string>
+    <string name="ds_ui_remote_video">"Remote video"</string>
+    <string name="ds_ui_request_countdown">"Expires in %1$d:%2$02d"</string>
+    <string
+        name="ds_ui_video_metrics"
+    >"%1$s: %2$s · %3$s kbps · %4$s×%5$s · %6$s FPS\nLoss %7$s · dropped %8$s"</string>
+    <string name="ds_ui_route_elapsed">"%1$s · %2$ds"</string>
+    <string name="ds_ui_mic_unavailable_state">"unavailable"</string>
+    <string name="ds_ui_mic_muted_state">"muted"</string>
+    <string name="ds_ui_media_on">"on"</string>
+    <string name="ds_ui_video_paused_state">"paused"</string>
+    <string name="ds_ui_transport_metrics">"ICE %1$s · peer %2$s · RTT %3$s ms"</string>
+    <string name="ds_ui_video_in">"Video in"</string>
+    <string name="ds_ui_video_out">"Video out"</string>
+    <string
+        name="ds_ui_audio_in_metrics"
+    >"Audio in: %1$s · %2$s kbps · loss %3$s · level %4$s"</string>
+    <string name="ds_ui_audio_out_metrics">"Audio out: %1$s · %2$s kbps · loss %3$s"</string>
+    <string name="ds_ui_output_pending">"Output pending"</string>
+    <string name="ds_ui_microphone_output_metrics">"Mic %1$s · %2$s"</string>
+    <string name="ds_ui_video_pause_metrics">"Video local %1$s · remote %2$s"</string>
+    <string
+        name="ds_ui_compare_this_verification_value_camera_and_audio_start"
+    >"Compare this verification value. Camera and audio start only after acceptance."</string>
+    <string
+        name="ds_ui_only_accept_if_you_expected_this_call_a"
+    >"Only accept if you expected this call. A display name does not verify identity."</string>
+    <string
+        name="ds_ui_camera_and_microphone_start_after_you_accept_unlocking"
+    >"Camera and microphone start after you accept. Unlocking may be required."</string>
+    <string name="ds_ui_call_duration">%1$d:%2$02d</string>
+    <string name="ds_ui_call_diagnostics">Call diagnostics</string>
+    <string name="ds_ui_current_audio_output">Audio output: %1$s</string>
+    <string name="ds_ui_codec_auto">Auto</string>
+    <string name="ds_ui_codec_prefer">Prefer %1$s</string>
+    <string name="ds_ui_codec_policy_enforce">Enforce %1$s</string>
+    <string name="ds_ui_codec_idle">Idle</string>
+    <string name="ds_ui_codec_preparing">Preparing</string>
+    <string name="ds_ui_codec_applying">Applying</string>
+    <string name="ds_ui_codec_active">Active</string>
+    <string name="ds_ui_codec_rolling_back">Restoring previous codecs</string>
+    <string name="ds_ui_codec_failed">Failed</string>
+    <string name="ds_ui_codec_policies">Requested video: %1$s · audio: %2$s</string>
+    <string name="ds_ui_codec_selection">Negotiated video: %1$s · audio: %2$s · %3$s</string>
+    <string name="ds_ui_codec_implementation">%1$s profile: %2$s · implementation: %3$s</string>
+    <string name="ds_ui_audio_in">Audio in</string>
+    <string name="ds_ui_audio_out">Audio out</string>
+    <string
+        name="ds_ui_permission_required"
+    >Grant the required call permissions to continue.</string>
+    <string name="ds_ui_invalid_recipient">Enter a valid code for another device.</string>
+    <string name="ds_ui_unlock_to_continue">Unlock your device to continue.</string>
+    <string name="ds_ui_return_to_call">Return to call</string>
+    <string name="ds_ui_microphone_denied">Microphone unavailable</string>
+    <string
+        name="ds_ui_receive_only_audio"
+    >You can hear the other participant without sharing your microphone.</string>
+    <string name="ds_ui_continue_without_microphone">Continue without microphone</string>
+    <string name="ds_ui_audio_call">Audio call</string>
+    <string name="ds_ui_incoming_audio_call">Incoming audio call</string>
+    <string name="ds_ui_wants_to_audio_call_you">Wants to audio call you</string>
+    <string
+        name="ds_ui_compare_audio_value"
+    >Compare this verification value. Audio starts only after acceptance.</string>
+    <string name="ds_ui_dismiss">Dismiss</string>
+    <string
+        name="ds_ui_unsupported_call_mode"
+    >This call mode is not supported by the configured service.</string>
+    <string name="ds_ui_debug_waiting">Waiting for first sample · refreshes every 2 s</string>
+    <string name="ds_ui_debug_stale">Stale readings · waiting for an update</string>
+    <string name="ds_ui_debug_live">Live readings · refreshes every 2 s</string>
+    <string name="ds_ui_debug_connection">Connection</string>
+    <string name="ds_ui_debug_route">Route</string>
+    <string name="ds_ui_debug_duration">Duration</string>
+    <string name="ds_ui_debug_ice">ICE state</string>
+    <string name="ds_ui_debug_peer">Peer state</string>
+    <string name="ds_ui_debug_rtt">Round-trip time</string>
+    <string name="ds_ui_debug_ms">%1$s ms</string>
+    <string name="ds_ui_debug_kbps">%1$s kbps</string>
+    <string name="ds_ui_debug_fps_value">%1$s fps</string>
+    <string name="ds_ui_debug_resolution_value">%1$d × %2$d</string>
+    <string name="ds_ui_debug_negotiation">Codec negotiation</string>
+    <string name="ds_ui_debug_device">Device and media</string>
+    <string name="ds_ui_debug_microphone">Microphone</string>
+    <string name="ds_ui_debug_interruption">Audio interrupted</string>
+    <string name="ds_ui_debug_system_mute">System muted</string>
+    <string name="ds_ui_debug_remote_mute">Remote muted</string>
+    <string name="ds_ui_debug_local_pause">Local video paused</string>
+    <string name="ds_ui_debug_remote_pause">Remote video paused</string>
+    <string name="ds_ui_debug_yes">Yes</string>
+    <string name="ds_ui_debug_no">No</string>
+    <string name="ds_ui_debug_expanded">Expanded</string>
+    <string name="ds_ui_debug_collapsed">Collapsed</string>
+    <string name="ds_ui_debug_stream_summary">%1$s · %2$s</string>
+    <string name="ds_ui_debug_codec">Codec</string>
+    <string name="ds_ui_debug_bitrate">Bitrate</string>
+    <string name="ds_ui_debug_resolution">Resolution</string>
+    <string name="ds_ui_debug_fps">Frame rate</string>
+    <string name="ds_ui_debug_dropped">Frames dropped (total)</string>
+    <string name="ds_ui_debug_level">Audio level (0–1)</string>
+    <string name="ds_ui_debug_loss">Packets lost (total)</string>
+    <string name="ds_ui_debug_profile">Profile</string>
+    <string name="ds_ui_debug_implementation">Implementation</string>
+    <string name="ds_ui_debug_requested_video">Requested video</string>
+    <string name="ds_ui_debug_requested_audio">Requested audio</string>
+    <string name="ds_ui_debug_selected_video">Selected video</string>
+    <string name="ds_ui_debug_selected_audio">Selected audio</string>
+    <string name="ds_ui_debug_phase">Negotiation state</string>
+    <string name="ds_ui_debug_device_code">Debug device code: %1$s</string>
+</resources>

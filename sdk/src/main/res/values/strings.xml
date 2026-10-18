@@ -1,0 +1,128 @@
+<resources>
+    <string name="ds_sdk_active_calls">"Active calls"</string>
+    <string name="ds_sdk_call_audio_interrupted">"Call audio interrupted"</string>
+    <string name="ds_sdk_call_in_progress">"Call in progress"</string>
+    <string name="ds_sdk_audio_continues_camera_paused">"Audio continues · camera paused"</string>
+    <string name="ds_sdk_tap_to_return_to_your_call">"Tap to return to your call"</string>
+    <string name="ds_sdk_return">"Return"</string>
+    <string name="ds_sdk_unmute">"Unmute"</string>
+    <string name="ds_sdk_mute">"Mute"</string>
+    <string name="ds_sdk_end_call">"End call"</string>
+    <string
+        name="ds_sdk_call_connection_failed_start_a_new_approved_request"
+    >"Call connection failed. Start a new approved request."</string>
+    <string name="ds_sdk_client_has_been_disposed">"Client has been disposed."</string>
+    <string
+        name="ds_sdk_complete_the_host_provider_configuration"
+    >"Complete the host provider configuration."</string>
+    <string name="ds_sdk_self_calls_are_not_allowed">"Self calls are not allowed."</string>
+    <string
+        name="ds_sdk_open_and_unlock_the_call_ui_before_starting_media"
+    >"Open and unlock the call UI before starting media."</string>
+    <string
+        name="ds_sdk_configure_returnactivity_for_notification_actions"
+    >"Configure returnActivity for notification actions."</string>
+    <string
+        name="ds_sdk_grant_camera_and_applicable_local_network_permission_before"
+    >"Grant camera and applicable local-network permission before calling."</string>
+
+    <string
+        name="ds_session_could_not_save_recent_calls_on_this_device"
+    >"Could not save recent calls on this device."</string>
+    <string
+        name="ds_session_check_host_supplied_provider_configuration"
+    >"Check host-supplied provider configuration."</string>
+    <string
+        name="ds_session_pending_call_cancelled_device_code_refreshed"
+    >"Pending call cancelled. Device code refreshed."</string>
+    <string
+        name="ds_session_finish_the_current_request_first"
+    >"Finish the current request first."</string>
+    <string name="ds_session_open_the_app_to_start_a_call">"Open the app to start a call."</string>
+    <string
+        name="ds_session_enter_the_other_device_s_code"
+    >"Enter the other device\'s code."</string>
+    <string name="ds_session_call_cancelled">"Call cancelled."</string>
+    <string
+        name="ds_session_open_the_app_to_approve_and_start_the_camera"
+    >"Open the app to approve and start the camera."</string>
+    <string name="ds_session_no_incoming_request">"No incoming request."</string>
+    <string
+        name="ds_session_call_cancelled_because_the_app_was_left_during_setup"
+    >"Call cancelled because the app was left during setup."</string>
+    <string name="ds_session_could_not_start_call">"Could not start call."</string>
+    <string name="ds_session_call_declined">"Call declined."</string>
+    <string name="ds_session_call_service_stopped">"Call service stopped."</string>
+    <string
+        name="ds_session_finish_your_current_call_request_first"
+    >"Finish your current call request first."</string>
+    <string
+        name="ds_session_this_call_request_is_no_longer_available"
+    >"This call request is no longer available."</string>
+    <string
+        name="ds_session_finish_your_current_call_first"
+    >"Finish your current call first."</string>
+    <string
+        name="ds_session_request_is_no_longer_available"
+    >"Request is no longer available."</string>
+    <string
+        name="ds_session_connection_unavailable_retrying"
+    >"Connection unavailable. Retrying…"</string>
+    <string name="ds_session_connection_failed">"Connection failed."</string>
+    <string name="ds_session_call_request_expired">"Call request expired."</string>
+    <string name="ds_session_call_request_ended">"Call request ended."</string>
+    <string
+        name="ds_session_open_the_app_to_start_streaming"
+    >"Open the app to start streaming."</string>
+    <string name="ds_session_session_not_authorized">"Session not authorized."</string>
+    <string
+        name="ds_session_relay_only_testing_needs_explicitly_enabled_turn"
+    >"Relay-only testing needs explicitly enabled TURN."</string>
+    <string
+        name="ds_session_the_other_participant_ended_the_call"
+    >"The other participant ended the call."</string>
+    <string name="ds_session_call_cancelled_during_setup">"Call cancelled during setup."</string>
+    <string
+        name="ds_session_call_ended_because_another_app_took_audio_focus"
+    >"Call ended because another app took audio focus."</string>
+    <string
+        name="ds_session_session_time_limit_reached_start_a_new_request"
+    >"Session time limit reached. Start a new request."</string>
+    <string name="ds_session_call_ended">"Call ended."</string>
+    <string
+        name="ds_session_camera_unavailable_or_permission_changed_start_a_new"
+    >"Camera unavailable or permission changed. Start a new call."</string>
+    <string
+        name="ds_session_no_working_webrtc_route_between_devices_check_network"
+    >"No working WebRTC route between devices. Check network access and relay configuration, then retry."</string>
+    <string
+        name="ds_session_no_direct_webrtc_route_between_devices_allow_nearby"
+    >"No direct WebRTC route between devices. Allow Nearby devices / local network access on Android 17 and try two phones on the same Wi-Fi. TURN is disabled, so blocked NAT routes cannot be relayed."</string>
+    <string
+        name="ds_session_code_regenerated"
+    >New device code ready. The previous code and pending incoming requests have been revoked.</string>
+
+    <string name="ds_audio_speakerphone">"Speakerphone"</string>
+    <string name="ds_audio_earpiece">"Earpiece"</string>
+    <string name="ds_audio_wired_headset">"Wired headset"</string>
+    <string name="ds_audio_bluetooth_headset">"Bluetooth headset"</string>
+
+    <string name="ds_incoming_incoming_calls">"Incoming calls"</string>
+    <string
+        name="ds_incoming_video_call_alerts_sound_and_lock_screen_display"
+    >"Video call alerts, sound and lock-screen display"</string>
+    <string
+        name="ds_incoming_request_is_no_longer_available"
+    >"Request is no longer available."</string>
+    <string name="ds_incoming_incoming_video_call">"Incoming video call"</string>
+    <string
+        name="ds_incoming_compare_the_verification_value_before_accepting"
+    >"Compare the verification value before accepting."</string>
+    <string name="ds_incoming_declining_call">"Declining call…"</string>
+    <string name="ds_incoming_checking_incoming_call">"Checking incoming call…"</string>
+    <string name="ds_incoming_close">"Close"</string>
+    <string name="ds_incoming_review_call">"Open %1$s to review the call."</string>
+    <string name="ds_incoming_caller">"%1$s caller"</string>
+    <string name="ds_audio_other_device">Audio device</string>
+    <string name="ds_incoming_incoming_audio_call">Incoming audio call</string>
+</resources>

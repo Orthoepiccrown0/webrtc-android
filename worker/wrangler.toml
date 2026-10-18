@@ -1,0 +1,38 @@
+name = "webrtc-pairing"
+main = "src/index.ts"
+compatibility_date = "2026-10-14"
+workers_dev = true
+
+[vars]
+FIREBASE_PROJECT_ID = "webrtc-hanger"
+FIREBASE_DATABASE_URL = "https://webrtc-hanger-default-rtdb.europe-west1.firebasedatabase.app"
+TURN_ENABLED = "false"
+TURN_KEY_ID = ""
+MAINTENANCE_MODE = "false"
+# Defaults respect Workers/D1 Free query limits. Tune only for the customer's plan/workload.
+D1_QUERY_BUDGET = "50"
+MAINTENANCE_JOB_LIMIT = "2"
+MAINTENANCE_MUTATION_LIMIT = "1"
+
+# Create this database and replace its ID before deployment. Local Wrangler uses a local database.
+[[d1_databases]]
+binding = "COORDINATION_DB"
+database_name = "directstream-coordination"
+database_id = "bb459e1d-8001-4169-a063-0897193efb0f"
+migrations_dir = "migrations"
+
+[[ratelimits]]
+name = "UID_LIMITER"
+namespace_id = "1001"
+simple = { limit = 20, period = 60 }
+
+[[ratelimits]]
+name = "IP_LIMITER"
+namespace_id = "1002"
+simple = { limit = 40, period = 60 }
+
+# Secrets: GOOGLE_SERVICE_ACCOUNT_JSON; TURN_API_TOKEN only if explicitly enabling TURN.
+# Keep the Worker on the Free plan. Do not enable paid usage automatically.
+
+[triggers]
+crons = ["* * * * *"]

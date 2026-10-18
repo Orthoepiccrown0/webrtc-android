@@ -1,0 +1,12 @@
+# Host-only release policy. Never export log stripping through SDK consumer rules.
+# Keep warnings/errors available for a host-provided release logger.
+-assumenosideeffects class timber.log.Timber {
+    public static void v(...);
+    public static void d(...);
+    public static void i(...);
+}
+-assumenosideeffects class timber.log.Timber$Tree {
+    public void v(...);
+    public void d(...);
+    public void i(...);
+}

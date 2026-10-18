@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <style name="Theme.DirectStreamShowcase" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#101919</item>
+        <item name="android:colorAccent">#80CBC4</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

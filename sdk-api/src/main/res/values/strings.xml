@@ -1,0 +1,25 @@
+<resources>
+    <string
+        name="ds_failure_service_rejected"
+    >"Call service rejected the operation (%1$d)."</string>
+    <string name="ds_failure_invalid_input">"Check the device code and input."</string>
+    <string name="ds_failure_permission">"Required permission is unavailable."</string>
+    <string name="ds_failure_retry">"Could not complete the operation. Please retry."</string>
+    <string
+        name="ds_codec_unsupported_local"
+    >The selected codec is not available for encoding and decoding on this device.</string>
+    <string
+        name="ds_codec_incompatible_peer"
+    >The devices have no compatible codec under these policies.</string>
+    <string
+        name="ds_codec_peer_unavailable"
+    >The peer did not complete codec setup. Update both clients and the signaling rules.</string>
+    <string name="ds_codec_busy">Another codec negotiation is in progress.</string>
+    <string name="ds_codec_no_active_call">Connect a call before changing its codecs.</string>
+    <string name="ds_codec_timeout">The codec change timed out.</string>
+    <string name="ds_codec_session_ended">The call ended before the codec change completed.</string>
+    <string name="ds_codec_negotiation_failed">Codec negotiation failed.</string>
+    <string
+        name="ds_failure_unsupported"
+    >This operation is not supported by the configured service.</string>
+</resources>
