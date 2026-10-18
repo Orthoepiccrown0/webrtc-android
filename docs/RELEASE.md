@@ -132,3 +132,11 @@ and [Optimization for library authors](https://developer.android.com/topic/perfo
 ## SDK 1.0.0 publication
 
 APK signing is separate from library publication. Use [PUBLICATION.md](PUBLICATION.md) for Maven Central publishing, private PGP signing credentials, local builds, ABI checks and dependency review. The Apache 2.0 SDK is distributed through Maven Central. The showcase uses that published SDK by default; pass `-PshowcaseUseLocalSdk=true` only when testing SDK source changes. Use the [service deployment instructions](DEPLOYMENT.md) for cloud service configuration and operations. Release APK signing does not deploy those services.
+
+## Automatic versions from tags
+
+See [CI and tag releases](CI.md). Showcase `versionName` follows `sdkVersion`;
+`versionCode` is `major * 1,000,000 + minor * 1,000 + patch`, so `v1.0.1` produces
+name `1.0.1` and code `1000001`. CI publishes the five SDK libraries to Central;
+it does not publish a signed showcase APK to an app store. APK signing remains
+a separate host-owned configuration.

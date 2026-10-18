@@ -1,0 +1,71 @@
+name: Release SDK to Maven Central
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: read
+concurrency:
+  group: maven-central-release
+  cancel-in-progress: false
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      version: ${{ steps.release.outputs.version }}
+      version-code: ${{ steps.release.outputs.version-code }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require a new stable version tagged on main
+        id: release
+        run: python3 scripts/release.py check --tag "$GITHUB_REF_NAME" --github-output "$GITHUB_OUTPUT"
+  verify:
+    needs: preflight
+    uses: ./.github/workflows/verify-sdk.yml
+    with:
+      sdk-version: ${{ needs.preflight.outputs.version }}
+  publish:
+    needs: [preflight, verify]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    environment: maven-central
+    env:
+      SDK_VERSION: ${{ needs.preflight.outputs.version }}
+      SHOWCASE_VERSION_CODE: ${{ needs.preflight.outputs.version-code }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: ./.github/actions/setup-sdk
+        with:
+          cache-disabled: "true"
+      - name: Recheck Central before irreversible publication
+        run: python3 scripts/release.py check --tag "$GITHUB_REF_NAME"
+      - name: Sign all five modules, inspect them and publish automatically
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_PASSWORD }}
+        run: |
+          set -euo pipefail
+          : "${ORG_GRADLE_PROJECT_mavenCentralUsername:?Missing MAVEN_CENTRAL_USERNAME}"
+          : "${ORG_GRADLE_PROJECT_mavenCentralPassword:?Missing MAVEN_CENTRAL_PASSWORD}"
+          : "${ORG_GRADLE_PROJECT_signingInMemoryKey:?Missing SIGNING_KEY}"
+          ./gradlew -PsdkVersion="$SDK_VERSION" -PsdkCentralRelease=true validateCentralRelease prepareSdkCentralRelease --no-configuration-cache
+          python3 scripts/verify_sdk_publication.py --signed --publications-only
+          ./gradlew -PsdkVersion="$SDK_VERSION" -PsdkCentralRelease=true -PsdkAutomaticRelease=true publishSdkToMavenCentral --no-configuration-cache
+      - name: Confirm public Maven Central availability
+        run: python3 scripts/release.py wait --version "$SDK_VERSION" --timeout 1800
+      - name: Record release coordinates
+        run: |
+          {
+            printf '## DirectStream %s\n\n' "$SDK_VERSION"
+            printf 'Published all five modules to Maven Central.\n\n'
+            printf '`implementation("io.github.orthoepiccrown0:directstream:%s")`\n\n' "$SDK_VERSION"
+            printf 'Showcase versionName: `%s`; versionCode: `%s`.\n' "$SDK_VERSION" "$SHOWCASE_VERSION_CODE"
+          } >> "$GITHUB_STEP_SUMMARY"

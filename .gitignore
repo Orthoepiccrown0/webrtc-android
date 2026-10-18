@@ -46,3 +46,7 @@ Thumbs.db
 # Private migration backups and JVM crash dumps
 /backups/
 *.hprof
+
+# Python verification scripts
+__pycache__/
+*.pyc

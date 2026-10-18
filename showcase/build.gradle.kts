@@ -26,6 +26,25 @@ val showcaseUseLocalSdk =
 val sdkGroup = providers.gradleProperty("sdkGroup").get()
 val sdkVersion = providers.gradleProperty("sdkVersion").get()
 
+require(Regex("""(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)""").matches(sdkVersion)) {
+    "Use a stable X.Y.Z SDK version without a prefix, leading zeros or suffix."
+}
+
+val versionParts = sdkVersion.split(".").map(String::toInt)
+
+require(
+    versionParts.size == 3 &&
+        versionParts[0] in 0..2099 &&
+        versionParts[1] in 0..999 &&
+        versionParts[2] in 0..999,
+) {
+    "Use a stable X.Y.Z SDK version (major <= 2099, minor/patch <= 999)."
+}
+
+val sdkVersionCode = versionParts[0] * 1_000_000 + versionParts[1] * 1_000 + versionParts[2]
+
+require(sdkVersionCode > 0) { "Android versionCode must be positive." }
+
 android {
     ndkVersion = libs.versions.ndk.get()
     namespace = "com.epiccrown.directstream.showcase"
@@ -37,8 +56,8 @@ android {
         applicationId = "com.epiccrown.webrtctest"
         minSdk = 30
         targetSdk = 37
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = sdkVersionCode
+        versionName = sdkVersion
 
         testInstrumentationRunner =
             providers

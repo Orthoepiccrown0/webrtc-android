@@ -1,7 +1,14 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application") version "9.4.1"
     id("org.jetbrains.kotlin.plugin.compose") version "2.2.10"
 }
+
+val sdkDefaults = Properties().apply { file("../gradle.properties").inputStream().use { load(it) } }
+val sdkVersion =
+    providers.gradleProperty("sdkVersion").getOrElse(sdkDefaults.getProperty("sdkVersion"))
+val sdkGroup = providers.gradleProperty("sdkGroup").getOrElse(sdkDefaults.getProperty("sdkGroup"))
 
 android {
     ndkVersion = "29.0.14033849"
@@ -26,8 +33,8 @@ android {
 }
 
 dependencies {
-    "starterImplementation"("io.github.orthoepiccrown0:directstream:1.0.0")
-    "coreImplementation"("io.github.orthoepiccrown0:directstream-ui:1.0.0")
+    "starterImplementation"("$sdkGroup:directstream:$sdkVersion")
+    "coreImplementation"("$sdkGroup:directstream-ui:$sdkVersion")
     implementation("androidx.activity:activity-compose:1.12.4")
     implementation(platform("androidx.compose:compose-bom:2026.02.01"))
     implementation("androidx.compose.material3:material3")

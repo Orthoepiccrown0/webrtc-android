@@ -1,0 +1,68 @@
+name: Verify SDK
+on:
+  pull_request:
+  push:
+    branches: [main, "codex/**"]
+  workflow_call:
+    inputs:
+      sdk-version:
+        description: Version supplied by a validated release tag.
+        type: string
+        default: ""
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      REQUESTED_SDK_VERSION: ${{ inputs.sdk-version }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/setup-sdk
+      - name: Resolve build version
+        run: python3 scripts/release.py version --version "$REQUESTED_SDK_VERSION" --github-env "$GITHUB_ENV"
+      - name: Test release automation
+        run: python3 -m unittest discover -s scripts/tests -v
+      - name: Verify SDK and showcase using source modules
+        run: >-
+          ./gradlew -PsdkVersion="$SDK_VERSION" -PshowcaseUseLocalSdk=true
+          spotlessCheck verifySdkBoundaries sdkApiCheck
+          :sdk-api:testDebugUnitTest :sdk:testDebugUnitTest :showcase:testDebugUnitTest
+          :showcase:assembleDebug :showcase:assembleRelease :showcase:lintDebug
+          publishSdkLocally --no-configuration-cache
+      - name: Build both standalone consumer flavors from the candidate publications
+        run: >-
+          ./gradlew -p integration-consumer -PsdkVersion="$SDK_VERSION"
+          -PuseLocalSdkRepository=true assembleDebug assembleRelease --no-configuration-cache
+      - name: Inspect Maven metadata, versions, JNI, native ABIs and effective R8 rules
+        run: ./gradlew -PsdkVersion="$SDK_VERSION" verifySdkPublication --no-configuration-cache
+      - name: Enable emulator acceleration
+        run: sudo chmod 666 /dev/kvm
+      - name: Run isolated SDK lifecycle and contract tests
+        uses: reactivecircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d # v2.38.0
+        with:
+          api-level: 35
+          arch: x86_64
+          target: google_apis
+          disable-animations: true
+          script: >-
+            ./gradlew -PsdkVersion="$SDK_VERSION" -PshowcaseUseLocalSdk=true
+            -PdirectStreamTestRunner=com.epiccrown.directstream.showcase.integration.SdkTestRunner
+            -Pandroid.testInstrumentationRunnerArguments.class=com.epiccrown.directstream.showcase.SdkClientTest,com.epiccrown.directstream.showcase.integration.SdkIntegrationTest
+            :showcase:connectedDebugAndroidTest --no-configuration-cache
+      - name: Retain verification reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: sdk-verification-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 7
+          if-no-files-found: ignore
+          path: |
+            sdk*/build/reports/
+            showcase/build/reports/
+            sdk*/build/test-results/
+            showcase/build/test-results/
+            showcase/build/outputs/androidTest-results/

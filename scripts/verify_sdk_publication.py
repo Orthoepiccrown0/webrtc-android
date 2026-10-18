@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = re.search(r"^sdkVersion=(.+)$", (ROOT / "gradle.properties").read_text(), re.M)[1]
+VERSION = os.environ.get("SDK_VERSION") or re.search(r"^sdkVersion=(.+)$", (ROOT / "gradle.properties").read_text(), re.M)[1]
 GROUP = re.search(r"^sdkGroup=(.+)$", (ROOT / "gradle.properties").read_text(), re.M)[1]
 REPO = ROOT / "build/sdk-maven" / GROUP.replace(".", "/")
 EDGES = {
@@ -113,6 +113,10 @@ with ZipFile(REPO / "directstream-runtime" / VERSION / f"directstream-runtime-{V
         declarations = subprocess.check_output(
             [javap, "-constants", "-classpath", str(jar), "com.epiccrown.directstream.DirectStreamClientKt"], text=True)
         require(f'DIRECT_STREAM_VERSION = "{VERSION}";' in declarations, "Runtime constant version mismatch")
+
+if "--publications-only" in sys.argv:
+    print("SDK publication metadata, signatures, version and transitive dependencies passed.")
+    raise SystemExit(0)
 
 abis = {"arm64-v8a", "armeabi-v7a", "x86", "x86_64"}
 for flavor in ("core", "starter"):

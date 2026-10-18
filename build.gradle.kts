@@ -155,6 +155,7 @@ tasks.register<Exec>("verifySdkPublication") {
     description = "Verifies local Maven metadata and all four standalone consumer APKs."
     dependsOn("publishSdkLocally")
     environment("JAVA_HOME", System.getProperty("java.home"))
+    environment("SDK_VERSION", providers.gradleProperty("sdkVersion").get())
     commandLine(
         listOf("python3", "scripts/verify_sdk_publication.py") +
             if (
@@ -225,7 +226,7 @@ tasks.register("prepareSdkCentralRelease") {
 tasks.register("publishSdkToMavenCentral") {
     group = "publishing"
     description =
-        "Uploads all five signed SDK modules to one Central deployment for manual release."
+        "Uploads all five signed SDK modules; sdkAutomaticRelease opts into automatic release."
     dependsOn("validateCentralRelease", "sdkApiCheck", "verifySdkBoundaries")
     dependsOn(
         listOf("sdk-api", "sdk", "sdk-ui", "sdk-firebase", "sdk-starter").map {
@@ -301,8 +302,14 @@ fun Project.configureSdkPublication() {
 
     extensions.configure<MavenPublishBaseExtension> {
         coordinates(project.group.toString(), sdkArtifactId, project.version.toString())
-        // Upload a deployment for manual release in the Portal; never automatically release it.
-        publishToMavenCentral(automaticRelease = false)
+        val automaticRelease =
+            providers.gradleProperty("sdkAutomaticRelease").map(String::toBoolean).getOrElse(false)
+        require(!automaticRelease || centralRelease) {
+            "Automatic release requires -PsdkCentralRelease=true."
+        }
+        // Local uploads stay manual; the tag release workflow explicitly opts into automatic
+        // release.
+        publishToMavenCentral(automaticRelease = automaticRelease)
         if (centralRelease) signAllPublications()
     }
 

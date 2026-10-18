@@ -1,5 +1,8 @@
 # Maven Central publication
 
+For automatic releases from `vX.Y.Z` tags on `main`, use [CI and tag releases](CI.md).
+That workflow explicitly enables automatic Central release; local publishing stays manual by default.
+
 The Maven Central namespace supplied for this project is `io.github.orthoepiccrown0`.
 All five Android artifacts use the root `sdkGroup` and `sdkVersion` properties:
 
@@ -117,7 +120,7 @@ From a reviewed, clean release checkout with signing and Portal credentials set:
 ./gradlew -PsdkCentralRelease=true publishSdkToMavenCentral
 ```
 
-The aggregate task uploads **all five modules together** to a Central Portal
+Unless explicitly opting in with `-PsdkAutomaticRelease=true`, the aggregate task uploads **all five modules together** to a Central Portal
 deployment. Automatic release is disabled. Wait for Portal validation, inspect the
 deployment, and publish it manually in [Central Portal](https://central.sonatype.com/publishing/deployments).
 Missing opt-in, signing key or token properties fail before Central preparation/upload.
@@ -132,7 +135,8 @@ See [Central requirements](https://central.sonatype.org/publish/requirements/) a
 
 ## Versioning and compatibility
 
-Root `sdkGroup` / `sdkVersion` drive all five publications; `sdkVersion` also drives
+Root `sdkGroup` / `sdkVersion` drive all five publications; CI overrides `sdkVersion`
+from its validated tag without editing tracked files. `sdkVersion` also drives
 `DIRECT_STREAM_VERSION`. Update pinned consumer coordinates and examples for each
 release. The runtime version remains a compile-time constant, so rebuild consumers
 when upgrading. Patch releases are compatible fixes; minor releases add compatible

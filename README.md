@@ -779,6 +779,7 @@ Release APK/AAB outputs are under `showcase/build/outputs/`. Whole-app R8/resour
 | [Codecs](docs/CODECS.md)                     | Capability discovery, policy resolution, signaling and live switching        |
 | [Validation](docs/VALIDATION.md)             | Automated commands and emulator/physical-device verification matrix          |
 | [Release builds](docs/RELEASE.md)            | R8, APK/AAB export, signing and crash symbols                                |
+| [CI and tag releases](docs/CI.md)            | Tag-driven releases, version codes and GitHub secrets                        |
 | [Publication](docs/PUBLICATION.md)           | Maven Central publishing, private credentials and local validation           |
 | [Dependency inventory](docs/DEPENDENCIES.md) | Resolved dependencies and cached POM license declarations for review         |
 
