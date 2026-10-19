@@ -24,6 +24,8 @@ jobs:
       - uses: ./.github/actions/setup-sdk
       - name: Resolve build version
         run: python3 scripts/release.py version --version "$REQUESTED_SDK_VERSION" --github-env "$GITHUB_ENV"
+      - name: Publish candidate SDK artifacts to the local repository
+        run: ./gradlew -PsdkVersion="$SDK_VERSION" publishSdkLocally --no-configuration-cache
       - name: Build both standalone consumer flavors from the candidate publications
         run: >-
           ./gradlew -p integration-consumer -PsdkVersion="$SDK_VERSION"
